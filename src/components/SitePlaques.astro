@@ -1,0 +1,55 @@
+---
+import { getI18n } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const sp = messages.sitePlaques;
+const items = sp.items ?? [];
+const { embedded = false } = Astro.props;
+---
+
+{embedded ? (
+  <div id="plaques">
+    <div class="max-w-3xl mx-auto text-center mb-10">
+      <h3 class="font-display text-2xl sm:text-3xl font-semibold mb-3" style="color: var(--text-primary);">{sp.title}</h3>
+      <p class="text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">{sp.subtitle}</p>
+      <p class="text-sm mt-3" style="color: var(--text-tertiary);">{sp.intro}</p>
+    </div>
+
+    <div class="space-y-6">
+      {items.map((it) => (
+        <article class="rounded-2xl p-6 sm:p-8 border" style="background: var(--bg-primary); border-color: var(--border-color);">
+          <div class="flex flex-wrap items-center gap-3 mb-4">
+            <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full" style="background: var(--accent); color: #fff;">{it.badge}</span>
+            <h4 class="font-semibold text-xl" style="color: var(--text-primary);">{it.title}</h4>
+          </div>
+          <p class="text-sm font-medium mb-3" style="color: var(--accent);">{it.koTitle}</p>
+          <p class="text-sm mb-4" style="color: var(--text-tertiary);">{it.koTitleZh}</p>
+          <p class="text-base leading-relaxed" style="color: var(--text-secondary);">{it.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+) : (
+  <section id="plaques" class="section-padding" style="background: var(--bg-secondary);">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-10">
+        <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-3" style="color: var(--text-primary);">{sp.title}</h2>
+        <p class="text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">{sp.subtitle}</p>
+        <p class="text-sm mt-3" style="color: var(--text-tertiary);">{sp.intro}</p>
+      </div>
+
+      <div class="space-y-6">
+        {items.map((it) => (
+          <article class="rounded-2xl p-6 sm:p-8 border" style="background: var(--bg-primary); border-color: var(--border-color);">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+              <span class="inline-block text-xs font-semibold px-3 py-1 rounded-full" style="background: var(--accent); color: #fff;">{it.badge}</span>
+              <h3 class="font-semibold text-xl" style="color: var(--text-primary);">{it.title}</h3>
+            </div>
+            <p class="text-sm font-medium mb-3" style="color: var(--accent);">{it.koTitle}</p>
+            <p class="text-sm mb-4" style="color: var(--text-tertiary);">{it.koTitleZh}</p>
+            <p class="text-base leading-relaxed" style="color: var(--text-secondary);">{it.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

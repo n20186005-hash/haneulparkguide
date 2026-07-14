@@ -1,0 +1,44 @@
+---
+import { getI18n } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const edu = messages.education;
+const eduPoints = edu.points ?? [];
+const aud = messages.audience;
+const audItems = aud.items ?? [];
+---
+
+<section id="deep-dive" class="section-padding" style="background: var(--bg-primary);">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-12">
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-3" style="color: var(--text-primary);">{edu.title}</h2>
+      <p class="text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">{edu.subtitle}</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+      {eduPoints.map((p) => (
+        <div class="rounded-2xl p-6 border h-full" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+          <h3 class="font-semibold text-lg mb-3" style="color: var(--accent);">{p.title}</h3>
+          <p class="text-base leading-relaxed" style="color: var(--text-secondary);">{p.text}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="max-w-3xl mx-auto text-center mb-10">
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-3" style="color: var(--text-primary);">{aud.title}</h2>
+      <p class="text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">{aud.subtitle}</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5">
+      {audItems.map((item) => (
+        <div class="rounded-2xl p-6 border h-full" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-2xl" aria-hidden="true">{item.icon}</span>
+            <h3 class="font-semibold text-lg" style="color: var(--text-primary);">{item.group}</h3>
+          </div>
+          <p class="text-sm leading-relaxed mb-3" style="color: var(--text-secondary);"><span class="font-medium" style="color: var(--text-primary);">共鸣点：</span>{item.resonance}</p>
+          <p class="text-sm leading-relaxed" style="color: var(--text-secondary);"><span class="font-medium" style="color: var(--text-primary);">建议：</span>{item.tip}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

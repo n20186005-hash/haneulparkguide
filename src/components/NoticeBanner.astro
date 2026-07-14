@@ -1,0 +1,12 @@
+---
+import { getI18n } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const b = messages.nonprofitBanner;
+---
+
+<div class="nonprofit-banner" role="note" aria-label="disclaimer">
+  <div class="max-w-6xl mx-auto px-4 py-2.5 flex items-start sm:items-center gap-2.5">
+    <span class="shrink-0 text-base leading-none" aria-hidden="true">🧭</span>
+    <p class="text-xs sm:text-sm leading-snug" style="color: var(--text-secondary);">{b.text}</p>
+  </div>
+</div>

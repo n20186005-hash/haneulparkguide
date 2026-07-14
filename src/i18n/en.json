@@ -1,0 +1,834 @@
+{
+  "meta": {
+    "title": "Haneul Park (하늘공원) | Seoul's Ecological Park in Mapo-gu · Silver-grass Meadow & Sunset",
+    "description": "The complete guide to Haneul Park (하늘공원): an ecological oasis in Seoul's Mapo-gu, transformed from a former landfill within World Cup Park. Silver-grass meadows, Han River sunsets and the Seoul skyline — all in one place. Opening hours, how to get there, the accessible shuttle, visitor reviews and photo spots."
+  },
+  "header": {
+    "siteName": "Haneul Park",
+    "home": "Home",
+    "visit": "Visit",
+    "transport": "Getting There",
+    "lodging": "Stay",
+    "history": "History",
+    "gallery": "Gallery",
+    "reviews": "Reviews",
+    "faq": "FAQ",
+    "map": "Map",
+    "backToHome": "Back to home"
+  },
+  "common": {
+    "changeLanguage": "Change language",
+    "toggleTheme": "Toggle theme"
+  },
+  "nonprofitBanner": {
+    "text": "This is an independent, non-profit guide compiled by travel enthusiasts to provide the most objective information about visiting Haneul Park. It is free, and we are affiliated with no organization."
+  },
+  "mission": {
+    "title": "Our Mission",
+    "text": "So that every traveler who visits Seoul does not miss this oasis reborn from a garbage mountain inside World Cup Park, we have gathered scattered official information into this guide — purely to give you the most authentic viewing and cultural experience."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "region": "Seoul",
+    "city": "Mapo-gu",
+    "current": "Haneul Park"
+  },
+  "stickyNav": {
+    "facts": "Quick Facts",
+    "etiquette": "Visitor Etiquette",
+    "route": "Half-Day Route",
+    "transport": "Getting There",
+    "lodging": "Stay",
+    "visit": "Visitor Tips",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "title": "Haneul Park (하늘공원)",
+    "subtitle": "An ecological oasis in Seoul's Mapo-gu, inside World Cup Park — reborn from a former landfill. Free to enter, it is Seoul's top spot for silver-grass meadows, Han River sunsets and the city skyline. Climb the eco-hill and watch the afterglow spread across the skyline.",
+    "rating": "4.5 (8,288)",
+    "reviewCount": "8,288 reviews",
+    "hours": "06:00 – 22:00 (seasonal)",
+    "openMaps": "View on Google Maps",
+    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9",
+    "tags": ["Seoul sunset & skyline", "Autumn silver-grass", "Free · Eco park"],
+    "routeCta": {
+      "label": "Plan your route",
+      "href": "#transport"
+    },
+    "historyCta": {
+      "label": "Discover its transformation",
+      "href": "#history"
+    },
+    "quickFacts": [
+      { "icon": "🌿", "label": "Best for", "value": "Silver-grass meadow" },
+      { "icon": "🆓", "label": "Admission", "value": "Free" },
+      { "icon": "🕕", "label": "Hours", "value": "06:00–22:00" }
+    ],
+    "navCta": { "label": "📍 Get directions", "href": "#transport" },
+    "photoCta": { "label": "📸 Best photo spots", "href": "#gallery" },
+    "liveInfo": { "weather": "Current weather", "sunset": "Tonight's sunset" }
+  },
+  "quickFactsDashboard": {
+    "title": "Haneul Park at a Glance",
+    "subtitle": "Key facts gathered in one place for quick reading and fast decisions.",
+    "items": [
+      { "icon": "📍", "label": "Location", "value": "Mapo-gu, Seoul", "note": "95 Haneulgongwon-ro, Mapo-gu, Seoul (World Cup Park · Haneul Park)." },
+      { "icon": "🌿", "label": "Highlight", "value": "Silver-grass & sunset", "note": "An eco-hill reborn from a landfill; in autumn the silver-grass (eulalia) ripples in the wind — Seoul's favorite sunset and skyline viewpoint." },
+      { "icon": "🕕", "label": "Hours", "value": "06:00–22:00 (winter ~21:00)", "note": "Adjusted by season and sunset; allow time to descend before closing." },
+      { "icon": "🎟️", "label": "Admission", "value": "Free", "note": "A public ecological park with no ticket and no reservation needed." }
+    ]
+  },
+  "hiddenRules": {
+    "title": "Safety Tips for the Hill & Slopes",
+    "subtitle": "Haneul Park sits on an ~90 m ecological hill; the ascent stairs (the famous 'Haneul Park stairs') are steep. Know these in advance for a safe, smooth climb.",
+    "highlights": [
+      { "icon": "🪜", "label": "Stairs & gradient", "value": "Many steps, steep", "note": "About 291 ecological stairs from Peace Park to the summit — physically demanding. Wear comfy shoes, slow down and rest in stages." },
+      { "icon": "☀️", "label": "Sun & wind", "value": "Exposed, windy top", "note": "The hill is open with little shade; sunscreen and water in summer, warm layers for the strong river wind in autumn/winter. Light fades after sunset — plan ahead." },
+      { "icon": "⚠️", "label": "Night & descent", "value": "Dim lights, mind knees", "note": "Some slopes have limited lighting before closing; descents stress the knees — elders and children should use the gentle loop or the eco-shuttle." }
+    ],
+    "panels": [
+      {
+        "q": "Do I have to climb the stairs? Is there an alternative?",
+        "a": "The classic route is about 291 ecological stairs and fairly steep. Those with limited stamina, infants or reduced mobility can take the park's eco-shuttle (eco-shuttle) along the service road straight to the upper platform, avoiding the climb.",
+        "items": ["The shuttle has fixed stops and a fare; queues form in peak season — go off-peak.", "Strollers and wheelchairs can reach the summit platform via the upper road."]
+      },
+      {
+        "q": "Why descend soon after sunset?",
+        "a": "The park closes around sunset; light drops quickly afterwards and some slopes are dimly lit, plus the descent is hard on the knees. Start going down right after sunset, or take the last shuttle."
+      },
+      {
+        "q": "Can I picnic, light a fire or fly a drone on the grass?",
+        "a": "The silver-grass slope is a protected zone — no stepping on, sitting on or picking the grass. The area is windy and near flight paths, so drones are prohibited without permission. Use the designated paths and take your trash with you."
+      }
+    ]
+  },
+  "complianceGuide": {
+    "title": "Haneul Park · Visitor & Ecological Etiquette",
+    "subtitle": "This is both a citizen's green space and a habitat we must protect together. Following these rules is basic respect for nature and others.",
+    "rules": [
+      {
+        "badge": "🚫",
+        "title": "No entering or picking the grass",
+        "text": "The silver-grass slope is a protected ecological zone — do not step on, sit on or pick the grass; stay on the paved paths and boardwalks.",
+        "items": ["Stop immediately at signs reading 'Protect the turf' or 'No entry'.", "For photos, never step onto the slope or trample vegetation for a better angle."]
+      },
+      {
+        "badge": "🗑️",
+        "title": "Take your trash with you",
+        "text": "Bins at the top and on the slope are limited and the wind scatters litter. Bring a small bag and take everything away when you leave."
+      },
+      {
+        "badge": "🔇",
+        "title": "Quiet viewing",
+        "text": "Many come specifically to watch the sunset and city nightscape in silence. Before and around sunset, please lower your voice and avoid loud music."
+      },
+      {
+        "badge": "🚭",
+        "title": "No smoking or open flame",
+        "text": "The grass is highly flammable in dry seasons — the whole park is smoke-free; no open flame, BBQ or smoking, to prevent fire."
+      }
+    ]
+  },
+  "higashiyamaRoute": {
+    "title": "World Cup Park Half-Day Eco Walk",
+    "subtitle": "Make Haneul Park the climax and link Peace Park, Nanji Hangang Park and the World Cup Stadium — feel the 'garbage mountain to oasis' miracle in half a day.",
+    "steps": [
+      { "title": "[Start] Peace Park gather & lawn warm-up", "meta": "Rest · ~30–45 min", "text": "Walk from World Cup Stadium Stn Exit 1 to Peace Park; warm up and photograph the open lawn, fountains and pond.", "tips": ["Peace Park is the gateway to World Cup Park with the best facilities and restrooms — resupply here first."] },
+      { "title": "[Stop 2] Climb Haneul Park stairs for the reeds", "meta": "Summit · ~60–90 min", "text": "Climb the 291 ecological stairs to the summit; autumn silver-grass and the dusk skyline are best. Take the eco-shuttle if low on energy.", "tips": ["Summit 60–90 min before sunset for the best light; go early to avoid crowds."] },
+      { "title": "[Stop 3] Nanji Hangang Park cycle or stroll", "meta": "Riverside · ~45–60 min", "text": "Descend west to Nanji Hangang Park; follow the Han River for wetlands, migratory birds and afterglow. Rent a public bike." },
+      { "title": "[Stop 4] World Cup Stadium & surroundings", "meta": "City · ~45 min", "text": "Return to the stadium area; view the stadium exterior, browse culture and dining — the legacy of the 2002 World Cup." },
+      { "title": "[End] Hongdae / Mangwon Market dinner", "meta": "Food · ~60 min", "text": "One or two subway stops to Hongdae or Hapjeong for street food and night markets, ending the eco-cultural half-day.", "tips": ["If visiting during the silver-grass festival, focus on Haneul Park and Peace Park."] }
+    ],
+    "disclaimer": "This is a typical pace; season, weather and crowds affect walking speed — adjust flexibly to on-site conditions."
+  },
+  "intro": {
+    "title": "Getting to Know Haneul Park",
+    "description": "Haneul Park (하늘공원, Haneul Park) sits inside World Cup Park in Seoul's Mapo-gu — an ecological park built atop the former Nanjido (난지도) landfill. '하늘' means 'sky' in Korean, and the park takes its name from the high hill that seems to touch the sky. It is both Seoul citizens' weekend green lung for climbing, reed-viewing and sunsets, and a symbol of 'waste-to-wonder' environmental regeneration — once Seoul's largest garbage mountain, now an ecological oasis where silver-grass sways and migratory birds rest.",
+    "visitGuide": {
+      "title": "Visitor Guide",
+      "eyebrow": "Practical Planning",
+      "description": "Haneul Park is free and open daily, roughly 06:00–22:00 (seasonal). Make a dusk summit for the sunset your main plan, then link Peace Park, Nanji Hangang Park and the World Cup Stadium. The summit is open with minimal facilities — do your supplies at the foot (Peace Park) or nearby commercial areas.",
+      "items": [
+        "Free and open daily; dusk summit for sunset and skyline is best for light and photos.",
+        "Best angles are the southwest slope and viewing deck; autumn silver-grass (eulalia) is most spectacular.",
+        "From Line 6 World Cup Stadium Stn (월드컵경기장) Exit 1, walk ~15 min to the foot, then climb the stairs or take the shuttle.",
+        "No shops or food at the top; water and restrooms are at the foot (Peace Park) and Nanjicheon — stock up beforehand."
+      ]
+    },
+    "alsoKnownAs": {
+      "title": "Highlights",
+      "items": [
+        "An ecological miracle reborn from a landfill — witness Seoul's regeneration",
+        "One of Seoul's best sunset and skyline viewpoints",
+        "Autumn silver-grass (eulalia) meadow and the 'Haneul Park Reed Festival'",
+        "Free, open daily, summit overlooks the Han River and Seoul skyline"
+      ]
+    }
+  },
+  "transportSection": {
+    "title": "Transport & Getting There",
+    "subtitle": "A structured guide to reaching Seoul, city transfers, walking/cycling, parking and EV charging for Haneul Park.",
+    "overviewTitle": "After arriving in Seoul",
+    "overviewText": "Haneul Park is inside World Cup Park in Seoul's Mapo-gu. The easiest external link is flying into Incheon (ICN)/Gimpo (GMP) or taking the KTX to Seoul Station, then the subway. In the city, the park is next to Line 6 World Cup Stadium Stn (월드컵경기장); transferring from Line 2/AREX usually takes ~30–50 min. Haneul Park is an ~90 m eco-hill — from the foot you climb 291 stairs or take the eco-shuttle.",
+    "overviewText2": "The park is an open ecological area with no walls or gates. Plan transport, parking and the summit route together — the shuttle greatly reduces the climb, especially with elders, infants or luggage.",
+    "arrivalTitle": "Remember before you go",
+    "arrivalItems": [
+      "Haneul Park is on the northwest hillside of World Cup Park, next to Line 6 World Cup Stadium Stn; ~15 min walk from Exit 1 to the foot.",
+      "No large dedicated lot at the summit — use World Cup Park's public parking or nearby paid lots, then walk/shuttle up.",
+      "During the autumn reed festival and weekends crowds are heavy; parking and stairs jam — strongly prefer transit or off-peak."
+    ],
+    "modes": [
+      {
+        "label": "Plane (Incheon / Gimpo)",
+        "icon": "✈️",
+        "title": "Fly into Seoul (overseas or domestic)",
+        "description": "Common for overseas and domestic long-haul; Gimpo is closer with frequent flights, Incheon has the widest international network.",
+        "details": [
+          "Gimpo (GMP): ~30–40 min to Mapo; airport bus, Line 5/9 or taxi.",
+          "Incheon (ICN): AREX to Seoul Station or Hongik Univ., then subway ~40–60 min to World Cup Stadium Stn.",
+          "In the city, transfer to Line 6 to World Cup Stadium Stn (below)."
+        ],
+        "steps": [
+          { "n": "1", "t": "Fly into Gimpo (GMP) or Incheon (ICN)." },
+          { "n": "2", "t": "Airport bus/subway into Seoul, then Line 6." },
+          { "n": "3", "t": "Exit 1, ~15 min walk to the foot; climb stairs or take the shuttle." }
+        ]
+      },
+      {
+        "label": "Train (KTX / high-speed)",
+        "icon": "🚆",
+        "title": "Via Seoul Station transfer",
+        "description": "From Busan, Daejeon etc. take KTX to Seoul Station, then subway to Mapo.",
+        "details": [
+          "From Seoul Station take Line 1 or AREX to Hongik Univ., then Line 6 ~10 min to World Cup Stadium Stn.",
+          "Or taxi from Seoul Station ~20–30 min to World Cup Park (traffic dependent).",
+          "Use a T-money/transit card — subway and buses accept tap payment."
+        ],
+        "steps": [
+          { "n": "1", "t": "Take KTX to Seoul Station." },
+          { "n": "2", "t": "Subway transfer to Line 6 World Cup Stadium Stn." },
+          { "n": "3", "t": "Exit 1, ~15 min walk to the foot; climb stairs or shuttle." }
+        ]
+      },
+      {
+        "label": "Public transit (subway / bus)",
+        "icon": "🚌",
+        "title": "Line 6 World Cup Stadium Stn",
+        "description": "Easiest for most travelers — subway goes right to the foot of the hill.",
+        "details": [
+          "Line 6 World Cup Stadium Stn (월드컵경기장) Exit 1, follow signs ~15 min walk to Peace Park and the foot stairs.",
+          "Or city buses to World Cup Park, then walk in.",
+          "Subway takes T-money; frequent — check live arrival in a maps app."
+        ],
+        "steps": [
+          { "n": "1", "t": "Take Line 6 to World Cup Stadium Stn." },
+          { "n": "2", "t": "Exit 1, follow park signs ~15 min walk." },
+          { "n": "3", "t": "At the foot, climb 291 stairs or take the eco-shuttle." }
+        ]
+      },
+      {
+        "label": "Car (parking / charging)",
+        "icon": "🅿️",
+        "title": "City expressways · nearby parking",
+        "description": "Good with kids/elders, lots of luggage, or touring Seoul; no big dedicated lot at the summit.",
+        "details": [
+          "Set destination to '하늘공원 (Haneul Park)' or '95 Haneulgongwon-ro, Mapo-gu, Seoul'.",
+          "World Cup Park combined parking (Peace Park underground/surface) has more spaces but fills on peak/weekends — arrive early.",
+          "Some public lots have EV chargers; the area is windy — mind crosswinds when parking."
+        ],
+        "steps": [
+          { "n": "1", "t": "Navigate to 'Haneul Park' or 'World Cup Park combined parking'." },
+          { "n": "2", "t": "Park in public/paid lot, walk or shuttle to the foot." },
+          { "n": "3", "t": "Avoid the 09:00–18:00 peak to save parking time." }
+        ]
+      },
+      {
+        "label": "Taxi / ride-hail",
+        "icon": "🚕",
+        "title": "Door-to-door",
+        "description": "Easiest with luggage, kids/elders, or early/late arrival.",
+        "details": [
+          "Taxi from Seoul Station or Hongdae to World Cup Park ~20–30 min, about KRW 10,000–18,000 (meter).",
+          "Drop off at the foot stairs, then climb or take the shuttle.",
+          "Taxis also queue in peak/rainy days — leave buffer and book via a local app (e.g., Kakao T)."
+        ],
+        "steps": [
+          { "n": "1", "t": "Book via Kakao T at the station or hotel." },
+          { "n": "2", "t": "Tell the driver '하늘공원 (Haneul Park)' or World Cup Park." },
+          { "n": "3", "t": "Drop off at the foot, climb stairs or take the shuttle." }
+        ]
+      },
+      {
+        "label": "Bike / walk",
+        "icon": "🚲",
+        "title": "Han River bike path & park stroll",
+        "description": "The most relaxing way to feel Seoul's green.",
+        "details": [
+          "The Han River bike path extends from Yeouido/Yanghwa Bridge to Nanji Hangang Park, then connects to the park greenway.",
+          "Haneul Park has paved slopes and boardwalks; park bikes at the foot rack, no riding on grass or boardwalks.",
+          "From Nanji Hangang Park to the foot ~10–20 min, riverside all the way."
+        ],
+        "steps": [
+          { "n": "1", "t": "Rent a public bike at the Han River Park." },
+          { "n": "2", "t": "Ride the greenway toward Haneul Park." },
+          { "n": "3", "t": "Lock at the foot rack, walk or shuttle up." }
+        ]
+      },
+      {
+        "label": "Walk (neighborhood roam)",
+        "icon": "🚶",
+        "title": "From the subway to the foot",
+        "description": "If you are around Mapo/Hongdae, walking is the most natural way to see the city-park transition.",
+        "details": [
+          "From World Cup Stadium Stn Exit 1, follow signs ~15 min to the foot stairs.",
+          "Pass Peace Park lawn, pond and sculptures — stroll and explore.",
+          "Slopes have slight grades; wear comfy shoes and watch children."
+        ]
+      }
+    ],
+    "parking": {
+      "title": "Parking & Charging (driver reference)",
+      "note": "Haneul Park has no large dedicated lot. Below are the nearest main parking and charging options; rates and availability vary by season/time — see on-site signs.",
+      "colOption": "Option",
+      "colDistance": "Distance",
+      "colPrice": "Price",
+      "options": [
+        { "name": "World Cup Park combined parking (Peace Park)", "distance": "~1.0–1.5 km (to foot)", "price": "Public rates lower, fills in peak" },
+        { "name": "Haneul Park foot temporary parking", "distance": "~300–500 m", "price": "Roadside/small lot, few spaces, easier off-peak" },
+        { "name": "World Cup Stadium area parking", "distance": "~1.5–2 km", "price": "Mall & stadium lots, tight on event days" },
+        { "name": "Nanji Hangang Park parking", "distance": "~2–2.5 km", "price": "Riverside public lot, good for biking" },
+        { "name": "Drop-off (foot stairs)", "distance": "~200 m", "price": "Brief stop only, no space" }
+      ],
+      "disclaimer": "Foot roads jam badly on holidays and during the reed festival — do not block bus/fire lanes for long. EV chargers are mostly at the combined parking and some municipal lots; none dedicated at the summit. Rates/limits may change — see posted signs."
+    },
+    "driverFaqTitle": "Driver FAQ",
+    "driverFaq": [
+      { "q": "Is there parking near Haneul Park?", "a": "No large dedicated lot at the summit, but World Cup Park combined parking and the foot temporary lot are reachable by walk/shuttle. They fill fast on weekends/peak — arrive early or park farther and transfer." },
+      { "q": "What is the nearest parking?", "a": "The foot temporary lot is ~300–500 m, the closest; the combined lot is ~1.0–1.5 km with more spaces but tight in peak." },
+      { "q": "Is there roadside parking?", "a": "Very little. The foot roads are narrow and congested on holidays — do not park roadside for long; use proper lots and transit." },
+      { "q": "Is driving recommended?", "a": "Unless you need parking, better not. The reed festival and weekends jam badly; walking or transit is smoother. If driving, park nearby and shuttle/walk up." },
+      { "q": "Do you recommend public transit?", "a": "Strongly. Line 6 to World Cup Stadium Stn, Exit 1 ~15 min walk to the foot, then stairs or shuttle. Address: 95 Haneulgongwon-ro, Mapo-gu, Seoul." },
+      { "q": "What is the best route?", "a": "Best by transit: Line 6 World Cup Stadium Stn, walk to the foot then stairs or eco-shuttle; or drive and park nearby then transfer. Address: 95 Haneulgongwon-ro, Mapo-gu, Seoul." }
+    ],
+    "localTipsTitle": "Useful on-site tips",
+    "localTips": [
+      "Dusk (60–90 min before sunset) has the most people and best light — prime for sunset and photos; go early to avoid crowds.",
+      "Autumn (usually October) silver-grass is at its peak; the 'Haneul Park Reed Festival' is often held — check dates and closing time.",
+      "Link Haneul Park with Peace Park, Nanji Hangang Park, the World Cup Stadium and Hongdae/Mangwon Market into a half-day eco-cultural line."
+    ],
+    "mapsCta": "View map & route",
+    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9",
+    "bestTime": {
+      "title": "Best time to arrive",
+      "text": "Haneul Park is visitable any time, but dusk is typically the best window to observe the sunset, the Han River and the Seoul skyline together. If the morning is cloudy or windy, shift the focus to Peace Park strolls, Nanji Hangang cycling and nearby cultural stops."
+    }
+  },
+  "officialManagement": {
+    "title": "About the Park",
+    "text": "Haneul Park is an ecological park in Seoul's Mapo-gu, inside World Cup Park, transformed from the former Nanjido landfill and managed by the Seoul Metropolitan Government as urban green space. Long a public place for citizens to climb, view reeds and watch the sunset, it is also a symbol of 'resource cycling' and 'environmental regeneration' for the city."
+  },
+  "humanities": {
+    "title": "History & Transformation",
+    "subtitle": "Following the landfill closure, ecological regeneration and on-site signs, we present the history of Haneul Park — from garbage mountain to urban oasis."
+  },
+  "knowledge": {
+    "title": "History & Transformation of Haneul Park",
+    "sections": [
+      {
+        "id": "history",
+        "title": "From garbage mountain to Haneul Park",
+        "content": "Nanjido (난지도), where Haneul Park stands, was Seoul's largest landfill from 1978 to 1993, receiving most of the city's household waste in mounds tens of meters high. After closure, the city stabilized the hill with thick soil cover and grass, and leveraged the 2002 Korea-Japan World Cup to promote environmental regeneration — opening in 1999 as part of 'World Cup Park' under the name 'Haneul Park'. '하늘 (sky)' refers both to its towering height and to the city's upward transformation."
+      },
+      {
+        "id": "joseon",
+        "title": "Closure & ecological regeneration",
+        "content": "After closure, soil and vegetation gradually stabilized the hill, and pioneer plants such as silver-grass (eulalia) naturally colonized it into a unique upland meadow. Today it is not only a rare urban meadow in Seoul but also a stopover for migratory birds and a window for stargazing and sunset — the once foul-smelling garbage mountain has become the city's 'green lung'."
+      },
+      {
+        "id": "palgyeong",
+        "title": "Part of World Cup Park",
+        "content": "Haneul Park forms 'World Cup Park' together with Peace Park, Pyeonghwa (Peace) Park, Nakji (Orchid) Park, Noeul (Sunset) Park and Haneul (Sky) Park — a representative environmental regeneration landmark of Seoul. It weaves 'waste treatment — ecological restoration — public recreation' into a readable urban narrative."
+      },
+      {
+        "id": "architecture",
+        "title": "Stairs & ecological design",
+        "content": "The park reaches the summit via the famous 291 ecological stairs, preserving the ritual of climbing while also serving elders, children and the less mobile — an upper service road carries the eco-shuttle (eco-shuttle). The grass is ringed by boardwalks to minimize trampling, a model of 'low-impact development'."
+      },
+      {
+        "id": "modern",
+        "title": "Citizens' sky living room",
+        "content": "Today Haneul Park has shifted from a barren hill to an urban green space anyone can reach. Free and open, it draws morning exercisers and dusk sunset-watchers, and during the autumn reed festival becomes a citywide event — a node where Seoul's daily life and tourism meet."
+      },
+      {
+        "id": "symbol",
+        "title": "A symbol of Seoul's regeneration",
+        "content": "From garbage mountain to oasis, Haneul Park is seen as a spiritual corner of Seoul's urban transformation and sustainable development, echoing the global 'waste-to-wonder' narrative. It reminds us that great urban landmarks often come from a gentler treatment of the land."
+      }
+    ],
+    "didYouKnow": {
+      "title": "Did you know?",
+      "text": "Nanjido, where Haneul Park stands, received most of Seoul's household waste from 1978 to 1993, with mounds tens of meters high. Today, covered in soil and greenery, the autumn silver-grass ripples in the wind — few would guess a garbage mountain lies beneath their feet."
+    }
+  },
+  "sitePlaques": {
+    "title": "Reading the On-site Signs",
+    "subtitle": "When you visit, official signs and maps at the foot and summit are the most authoritative first-hand source on its regeneration history. We translate and explain each one.",
+    "intro": "The following readings are based on on-site photos of the Seoul Metropolitan Government's regeneration signs, ecological maps and shuttle instructions.",
+    "items": [
+      {
+        "id": "monument",
+        "badge": "Regeneration sign",
+        "title": "Nanjido landfill & World Cup Park regeneration",
+        "koTitle": "난지도 매립지 · 월드컵공원 조성",
+        "koTitleZh": "Nanjido Landfill & World Cup Park Development",
+        "body": "The sign records: Nanjido was Seoul's largest household-waste landfill (1978–1993); after closure it was ecologically restored with soil cover and greenery, and World Cup Park was built for the 2002 Korea-Japan World Cup. Haneul Park opened in 1999 as part of it — a public green space for citizens to climb and view the river."
+      },
+      {
+        "id": "signboard",
+        "badge": "Eco sign (KO/EN)",
+        "title": "Silver-grass, birds & meadow ecology",
+        "koTitle": "억새 · 철새 · 초지 생태",
+        "koTitleZh": "Silver-grass · Birds · Meadow Ecology",
+        "body": "The bilingual eco sign explains: the Haneul Park meadow naturally succeeded after landfill soil cover, with silver-grass (eulalia) as the dominant pioneer plant; in autumn the reeds turn snow-white, and in spring/summer it hosts insects and migratory birds — reminding visitors not to enter the slope and to protect it together."
+      },
+      {
+        "id": "wooden",
+        "badge": "Map & shuttle info",
+        "title": "Stairs, boardwalk & eco-shuttle",
+        "koTitle": "계단 · 데크로드 · 에코셔틀",
+        "koTitleZh": "Stairs · Boardwalk · Eco-shuttle",
+        "body": "The park map marks: 291 ecological stairs to the summit; an upper road for the eco-shuttle (eco-shuttle) with fixed stops and a fare; the grass ringed by boardwalks, with wheelchairs and strollers reaching the summit platform via the upper road. Note last-departure times and suspension in bad weather."
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Photo Gallery",
+    "subtitle": "From silver-grass meadows, Han River sunsets and the city skyline to four-season slopes — see the visual beauty of Haneul Park.",
+    "photoAlt": "Haneul Park",
+    "photoAlts": [
+      "Summit view of Seoul skyline",
+      "Autumn silver-grass meadow",
+      "Slope at sunset",
+      "291 ecological stairs",
+      "Boardwalk and meadow",
+      "Warm dusk sky",
+      "Han River and distant hills",
+      "City lights at night",
+      "Peace Park lawn",
+      "Looking back from the foot",
+      "Silver-grass close-up",
+      "Quiet early morning",
+      "Meadow under blue sky",
+      "Sunset and clouds",
+      "Birds and wetlands",
+      "View toward Noeul Park",
+      "World Cup Stadium exterior",
+      "Nanji Hangang Park",
+      "Warm autumn tones",
+      "Snowy quiet hill"
+    ],
+    "viewAll": "View location on Google Maps",
+    "showMore": "Show more photos",
+    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9"
+  },
+  "reviews": {
+    "title": "Visitor Reviews",
+    "declaration": "Visitor feedback is available on Google Maps (external link).",
+    "featuredTitle": "Visitor Quotes",
+    "featuredSubtitle": "A few short lines that capture the spirit of Haneul Park.",
+    "moreReviews": "View on Google Maps",
+    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9",
+    "featured": [
+      {
+        "text": "At the summit at dusk, the whole Seoul skyline lit up by afterglow with the scent of reeds on the wind — truly healing.",
+        "source": "Independent traveler · Seoul"
+      },
+      {
+        "text": "The autumn silver-grass blankets the slope like snow, free and overlooking the Han River — Seoul's gentlest sunset spot.",
+        "source": "Photographer · Gyeonggi"
+      },
+      {
+        "text": "Took the eco-shuttle up with the kids, skipping the 291 stairs — easy even for the elders.",
+        "source": "Family · Incheon"
+      }
+    ],
+    "items": [
+      {
+        "name": "Minjun",
+        "date": "May 2026",
+        "rating": 5,
+        "text": "Summited before sunset; the afterglow lit the skyline and the place went quiet — strongly recommend dusk, best light."
+      },
+      {
+        "name": "Seoyeon",
+        "date": "Apr 2026",
+        "rating": 5,
+        "text": "Open slope, great views; the shuttle is family-friendly, but the top is windy so dress warm."
+      },
+      {
+        "name": "Jihun",
+        "date": "Mar 2026",
+        "rating": 4,
+        "text": "Worth it as a free city park; the 291 stairs are a real workout — take the shuttle if not fit."
+      },
+      {
+        "name": "Ha-eun",
+        "date": "Feb 2026",
+        "rating": 5,
+        "text": "About 15 min walk from World Cup Stadium Stn; Peace Park on the way is lovely for a half-day stroll."
+      }
+    ]
+  },
+  "mapSection": {
+    "title": "How to Get There",
+    "subtitle": "95 Haneulgongwon-ro, Mapo-gu, Seoul, Korea (Plus Code: HV8P+X5)",
+    "openMaps": "Open in Google Maps",
+    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9"
+  },
+  "footer": {
+    "siteName": "Haneul Park",
+    "rights": "© 2026 Haneul Park Guide — an independent non-profit attraction information project. All rights reserved.",
+    "mission": {
+      "title": "Our Mission",
+      "text": "So that every traveler who visits Seoul does not miss this oasis reborn from a garbage mountain inside World Cup Park, we have gathered scattered official information into this guide — purely to give you the most authentic viewing and cultural experience."
+    },
+    "legalLinksTitle": "Privacy & Terms",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Settings",
+    "officialResourcesTitle": "Official & Reference Resources",
+    "mapsLabel": "Google Maps →",
+    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9",
+    "officialLinksList": [
+      { "name": "Visit Seoul — Haneul Park", "url": "https://www.visitseoul.net/" },
+      { "name": "Mapo-gu Office Tourism", "url": "https://www.mapo.go.kr/" },
+      { "name": "Seoul Parks (World Cup Park / Haneul Park)", "url": "https://parks.seoul.go.kr/" },
+      { "name": "Korea Tourism Organization (VisitKorea)", "url": "https://chinese.visitkorea.or.kr/" },
+      { "name": "Korea Accessible Tourism", "url": "https://access.visitkorea.or.kr/" }
+    ],
+    "disclaimer": "This website is an independent non-profit visitor information project. We are affiliated with no government agency or official organization."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: June 2026",
+    "sections": [
+      {
+        "heading": "1. Information Collection",
+        "content": "We generally do not actively collect users' personal identity information. Any information you provide via contact forms or email will be kept strictly confidential."
+      },
+      {
+        "heading": "2. Use of Information",
+        "content": "Information we collect is used only to provide, maintain and improve our services and to communicate with you. We will not sell or share your personal information with third parties for marketing purposes."
+      },
+      {
+        "heading": "3. Cookies & Tracking",
+        "content": "We use cookies and similar tracking technologies to record activity on the site and store certain information. You can instruct your browser to refuse all cookies or to alert you when a cookie is sent."
+      },
+      {
+        "heading": "4. Data Security",
+        "content": "Your data security matters to us. We take commercially reasonable measures to protect your personal data, though no internet transmission is 100% secure."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: June 2026",
+    "sections": [
+      {
+        "heading": "1. Acceptance of Terms",
+        "content": "By accessing and using this website, you agree to be bound by these terms. If you disagree with any part, do not use the service."
+      },
+      {
+        "heading": "2. Use of Service",
+        "content": "This website is an independent non-profit visitor information project. The information provided is for general informational purposes only. You agree to use the site responsibly and lawfully."
+      },
+      {
+        "heading": "3. Intellectual Property",
+        "content": "All content on this site, including text, images and logos, unless stated otherwise, is the property of the site owner. Unauthorized use, copying or distribution is prohibited."
+      },
+      {
+        "heading": "4. Limitation of Liability",
+        "content": "We are not liable for any direct, indirect, incidental or consequential damages arising from the use or inability to use this website or the information it contains."
+      }
+    ]
+  },
+  "cookieSettings": {
+    "title": "Cookie Settings",
+    "description": "Manage your cookie preferences.",
+    "essential": {
+      "title": "Strictly Necessary Cookies",
+      "description": "Required for basic site functionality.",
+      "badge": "Always active"
+    },
+    "analytics": {
+      "title": "Analytics Cookies",
+      "description": "Help us understand how visitors interact with the site."
+    },
+    "marketing": {
+      "title": "Marketing Cookies",
+      "description": "Used to track visitors across websites."
+    },
+    "save": "Save preferences",
+    "saved": "Preferences saved!"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Practical info about Haneul Park's facilities, history and visit planning.",
+    "amenities": {
+      "title": "Nearby Facilities",
+      "items": [
+        { "icon": "🅿️", "label": "Parking", "value": "World Cup Park combined / foot lot" },
+        { "icon": "🚻", "label": "Restrooms", "value": "Foot Peace Park & Nanjicheon" },
+        { "icon": "🔌", "label": "Fuel / EV charge", "value": "Chargers at combined parking" },
+        { "icon": "♿", "label": "Accessibility", "value": "Eco-shuttle to upper platform" }
+      ]
+    },
+    "categories": [
+      {
+        "id": "infra",
+        "title": "Transport & Infrastructure",
+        "items": [
+          {
+            "q": "Is there parking, and what are the rates?",
+            "a": "No large dedicated lot at the summit, but World Cup Park combined parking (Peace Park underground/surface, public rates) and the foot temporary lot are reachable, then walk or take the eco-shuttle. Rates vary by season; they fill fast on weekends/peak, so arrive early or prefer transit."
+          },
+          {
+            "q": "Are wheelchairs or strollers allowed in the area?",
+            "a": "The summit platform and upper road are reachable by the eco-shuttle (eco-shuttle), so wheelchairs and strollers can reach the upper viewing area; but the classic 291 stairs are steep with no ramp — the lower-to-upper move needs the shuttle. The boardwalks are gentle and good for pushing."
+          },
+          {
+            "q": "Are there restrooms or food at the site?",
+            "a": "The summit slope has no shops or food; the nearest water and public toilets are at the foot (Peace Park), Nanjicheon and the combined parking (~10–15 min walk back). Stock up before going up."
+          }
+        ]
+      },
+      {
+        "id": "geo",
+        "title": "History & Ecology",
+        "items": [
+          {
+            "q": "Why is it called 'Haneul (Sky)', and does it relate to the garbage mountain?",
+            "a": "'하늘' means sky; the park sits on an ~90 m eco-hill that seems to touch the sky, hence 'Haneul Park'. Its predecessor was Seoul's largest Nanjido landfill — the name and the land together tell a regeneration story from garbage mountain to oasis."
+          },
+          {
+            "q": "What is special about its ecology and landform?",
+            "a": "After landfill closure and soil cover, pioneer plants like silver-grass naturally formed a meadow — now a stopover for migratory birds and a window for stargazing and sunset; the stairs-plus-shuttle design is also a model of 'low-impact development' and sustainability."
+          }
+        ]
+      },
+      {
+        "id": "plan",
+        "title": "Planning & Tickets",
+        "items": [
+          {
+            "q": "Is there an admission ticket?",
+            "a": "Haneul Park is a public ecological park, free daily ~06:00–22:00 (seasonal), with no gate, no ticket and no reservation — visit anytime."
+          },
+          {
+            "q": "How long does a visit take?",
+            "a": "A typical summit takes about 1–2 hours (stairs/shuttle plus time at the top); allow half a day if adding Peace Park, Nanji Hangang Park and the World Cup Stadium."
+          },
+          {
+            "q": "Can I still go in bad weather?",
+            "a": "Yes — it is an open park, visitable in any weather. But the summit slope is windy; in thunderstorms or snow it gets slippery with low visibility — wear grippy shoes, watch the weather and closing time; the eco-shuttle may suspend in bad weather."
+          }
+        ]
+      },
+      {
+        "id": "nearby",
+        "title": "Nearby Area",
+        "items": [
+          {
+            "q": "After visiting, what other attractions are worth it?",
+            "a": "From Haneul Park you can link Peace Park, Nakji (Orchid) Park, Nanji Hangang Park (wetlands & cycling), the Seoul World Cup Stadium, and farther out Hongdae/Mangwon Market and Yeouido Hangang Park — a half-day 'eco–culture–food' line in western Seoul."
+          }
+        ]
+      }
+    ]
+  },
+  "recommendations": {
+    "title": "Explore More of Seoul",
+    "attractionsTitle": "Nearby Attractions",
+    "toursTitle": "Recommended Experiences",
+    "attractions": [
+      { "name": "Peace Park", "url": "https://parks.seoul.go.kr/" },
+      { "name": "Nanji Hangang Park", "url": "https://hangang.seoul.go.kr/" },
+      { "name": "Seoul World Cup Stadium", "url": "https://www.seoulworldcupstadium.co.kr/" },
+      { "name": "Hongdae / Mangwon Market", "url": "https://www.visitseoul.net/" },
+      { "name": "Yeouido Hangang Park", "url": "https://hangang.seoul.go.kr/" }
+    ],
+    "tours": [
+      { "name": "Visit Seoul", "url": "https://www.visitseoul.net/" },
+      { "name": "Mapo-gu Office Tourism", "url": "https://www.mapo.go.kr/" },
+      { "name": "Korea Tourism Organization (VisitKorea)", "url": "https://chinese.visitkorea.or.kr/" }
+    ]
+  },
+  "scienceArt": {
+    "title": "Architecture & Regeneration of Haneul Park: Stairs, Meadow & Shuttle",
+    "subtitle": "Haneul Park is more than a sunset spot — it is public heritage weaving environmental regeneration, urban design and ecological succession. Two angles to read it.",
+    "scienceMuseum": {
+      "name": "Stairs & Meadow",
+      "role": "An eco-park built on a landfill",
+      "highlight": "The park reaches the summit via 291 ecological stairs, with an upper road for the eco-shuttle; the grass is ringed by boardwalks to minimize trampling. The structure follows the hill and wind — plain and practical, harmonizing with the silver-grass meadow into a harmonious urban mountain scene, a vivid example of 'low-impact development'.",
+      "points": [
+        "Siting: an ~90 m eco-hill, summit overlooks the Han River and Seoul skyline.",
+        "Structure: stairs + shuttle road + boardwalks, balancing ritual and accessibility.",
+        "Materials: soil cover and greenery, local and durable."
+      ],
+      "ctaLabel": "See Seoul Parks ↗",
+      "ctaUrl": "https://parks.seoul.go.kr/"
+    },
+    "artMuseum": {
+      "name": "Reeds & Sunset",
+      "role": "A cultural symbol of Seoul's regeneration",
+      "highlight": "'Haneul Park' comes from its sky-touching height, yet its predecessor was Seoul's largest landfill. From foul hill to silver-grass oasis, this transformation made it Seoul's 'waste-to-wonder' urban image and citizens' gentlest sunset memory.",
+      "points": [
+        "Image: reeds, sunset and skyline — among Seoul's most recognizable urban-nature scenes.",
+        "Status: an environmental regeneration landmark of World Cup Park.",
+        "Narrative: a cultural link joining landfill, meadow and citizens' memory."
+      ],
+      "ctaLabel": "See Visit Seoul ↗",
+      "ctaUrl": "https://www.visitseoul.net/"
+    }
+  },
+  "outdoorMuseum": {
+    "title": "Photo & Shooting Guide: Haneul Park Spots",
+    "subtitle": "As Seoul's most recognizable urban-nature landmark, a few structured spots and times greatly boost your photos' usefulness and beauty.",
+    "items": [
+      {
+        "id": "sunset",
+        "icon": "🌇",
+        "name": "Sunset · skyline",
+        "location": "Southwest viewing deck",
+        "background": "Summit 60–90 min before sunset and wait for the sun to set behind the skyline across the Han. Frame with the meadow as foreground and the city as extension — Haneul Park's classic 'sunset' composition.",
+        "points": [
+          "Use the meadow as foreground, place the skyline in the upper third.",
+          "Crouch low to layer the grass and afterglow for a steadier frame."
+        ],
+        "badge": { "value": "Sunset", "label": "Best gold" }
+      },
+      {
+        "id": "reeds",
+        "icon": "🌾",
+        "name": "Silver-grass meadow",
+        "location": "Boardwalk-ringed slope",
+        "background": "In autumn (usually October) the silver-grass turns snow-white; backlight makes the plumes glow, while frontlight captures the whole meadow's texture.",
+        "points": [
+          "Side backlight in the morning gives the softest plume texture.",
+          "Mind the boardwalk; do not step onto the protected slope."
+        ],
+        "badge": { "value": "Autumn", "label": "Most shots" }
+      },
+      {
+        "id": "skyline",
+        "icon": "🌆",
+        "name": "City nightscape",
+        "location": "Viewing deck facing the city",
+        "background": "After sunset the sky warms and the city lights turn on; the blue moment (20–30 min after sunset) balances sky and lights — the most atmospheric window.",
+        "points": [
+          "Shoot in the blue moment for balanced sky and city color.",
+          "Silhouette the grass, leaving a large warm skyline."
+        ],
+        "badge": { "value": "Dusk", "label": "Most mood" }
+      },
+      {
+        "id": "boardwalk",
+        "icon": "🪵",
+        "name": "Stairs & boardwalk",
+        "location": "291 ecological stairs / upper road",
+        "background": "Looking back from the foot at the 291 stairs, or along the boardwalk including the meadow and Han River in a wider frame — good for a closing wide shot.",
+        "points": [
+          "Use the stairs as a leading line toward the summit.",
+          "Morning mist gives best layers; small aperture for full panorama."
+        ],
+        "badge": { "value": "Morning", "label": "Best layers" }
+      }
+    ]
+  },
+  "education": {
+    "title": "Why did a garbage mountain become Haneul Park? (Meaning of Regeneration)",
+    "subtitle": "A small hill built on garbage — why did it cross eras to become Seoul's environmental symbol? Behind it are layered narratives of waste, land and city memory.",
+    "points": [
+      {
+        "title": "Origin of waste and land",
+        "text": "Nanjido received most of Seoul's household waste, mounds tens of meters high; after closure the city reborn the land most gently, and Haneul Park is the start of that restoration."
+      },
+      {
+        "title": "Citizens' sky corridor",
+        "text": "As part of World Cup Park, it shifted from barren hill to an urban green space anyone can reach, carrying Seoul citizens' daily life of climbing, river-viewing and rest."
+      },
+      {
+        "title": "A link of memory",
+        "text": "The same hill connects landfill history, meadow ecology, and today's sunset and skyline. It reminds us: great urban landmarks are often where history and reality coexist."
+      }
+    ]
+  },
+  "audience": {
+    "title": "Who Finds Resonance Here? (Audience Guide)",
+    "subtitle": "Different visitors each find their best 'way in'.",
+    "items": [
+      {
+        "icon": "👨‍👩‍👧",
+        "group": "Families",
+        "resonance": "Free, open and safe urban green space; kids can see reeds, view the Han River and easily summit by eco-shuttle.",
+        "tip": "Take the shuttle up; combine Peace Park lawn and Nanji Hangang cycling — adjust order by stamina."
+      },
+      {
+        "icon": "📷",
+        "group": "Photographers & couples",
+        "resonance": "Dusk sunset and city nightscape are Seoul's most romantic frames, with high shot rates.",
+        "tip": "Secure the summit deck 60–90 min before sunset; shoot blue moment for both lights and sky color."
+      },
+      {
+        "icon": "🌿",
+        "group": "Nature & ecology lovers",
+        "resonance": "As a meadow sample reborn from a landfill, the silver-grass succession and migratory birds are worth a close look.",
+        "tip": "Link Haneul Park with Nanji Hangang wetlands into an 'urban ecology tour'."
+      },
+      {
+        "icon": "🗺️",
+        "group": "First-time visitors to Korea",
+        "resonance": "No need to go far — observe reed meadows and Han River sunsets right in Seoul; also link subway, the World Cup Stadium and local food — the ideal start to understand Seoul's urban transformation.",
+        "tip": "Take Line 6 to World Cup Stadium Stn, then walk/shuttle."
+      }
+    ]
+  },
+  "lodging": {
+    "title": "Stay Guide: Near the Park, or Convenient?",
+    "subtitle": "Seoul is a city 'where river meets city'. We do not recommend specific hotels, but help you read two lodging patterns to choose what fits you.",
+    "scenarioTitle": "Two choices — how to choose",
+    "options": [
+      {
+        "icon": "🏙️",
+        "name": "Hongdae / Hapjeong (Mapo core)",
+        "role": "Best for transit & nightlife",
+        "highlight": "Stay in Hongdae or Hapjeong and Line 6 and AREX are at your door, making Haneul Park, the World Cup Stadium and Yeouido easy; the night street food and craft markets suit young travelers. Best for those focused on 'city roam + eco park' with high convenience.",
+        "points": [
+          "To Haneul Park by subway ~15–30 min, one transfer.",
+          "Dining, shopping and nightlife extremely rich.",
+          "More choices, usually better value."
+        ]
+      },
+      {
+        "icon": "🌉",
+        "name": "Mapo / Yeouido riverside",
+        "role": "Quiet river views, family-friendly",
+        "highlight": "Stay along the Han in Mapo or Yeouido; morning riverside walks and cycling, then subway to Haneul Park. Best for those focused on 'river, sunset, slow family trips'.",
+        "points": [
+          "Han River Park and bike paths at your door, good for mornings and families.",
+          "Quieter than Hongdae, good for rest.",
+          "To Haneul Park by subway ~20–30 min."
+        ]
+      }
+    ],
+    "peakTitle": "Peak-season warning",
+    "peak": "In Seoul's spring/autumn peak (especially the October reed festival and April cherry season) and holidays, rooms tighten as tourists flood in and prices rise clearly. Book weeks ahead; if booking near a holiday, widen the search to Jongno, Gangnam and other areas, then take the subway back.",
+    "tipsTitle": "Practical lodging tips",
+    "tips": [
+      "For sunset: prefer Mapo/Yeouido riverside, river views morning and dusk.",
+      "For convenience and nightlife: choose Hongdae/Hapjeong, transit and dining at hand.",
+      "Before booking, confirm breakfast, parking and EV chargers (key for drivers).",
+      "In peak season and holidays plan ahead to avoid no-room or high prices."
+    ]
+  }
+}
