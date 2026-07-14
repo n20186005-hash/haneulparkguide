@@ -4,6 +4,7 @@ const { messages } = getI18n(Astro.url);
 const h = messages.hero;
 const facts = h.quickFacts ?? [];
 const live = h.liveInfo ?? {};
+const planner = h.sunsetPlanner ?? {};
 ---
 
 <section id="overview" class="relative min-h-[84vh] sm:min-h-[90vh] flex items-center justify-center text-center overflow-hidden">
@@ -38,6 +39,30 @@ const live = h.liveInfo ?? {};
       <span class="live-pill">🌅 {live.sunset}：<span id="sunset-time" class="live-placeholder">—</span></span>
     </div>
 
+    {planner.title && (
+      <div class="max-w-3xl mx-auto mb-7 rounded-3xl border p-4 sm:p-5 text-left" style="background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+        <div class="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between">
+          <div class="min-w-0">
+            {planner.eyebrow && (
+              <p class="text-xs uppercase tracking-[0.22em] mb-2 text-white/70">{planner.eyebrow}</p>
+            )}
+            <p class="text-base sm:text-lg font-semibold text-white">{planner.title}</p>
+            {planner.note && <p class="text-sm sm:text-base mt-2 text-white/80 leading-relaxed">{planner.note}</p>}
+          </div>
+          <div class="grid grid-cols-2 gap-3 shrink-0">
+            <div class="rounded-2xl px-4 py-3" style="background: rgba(15,32,21,0.28);">
+              <p class="text-xs uppercase tracking-[0.18em] text-white/65">{planner.arriveLabel}</p>
+              <p id="sunset-arrive-time" class="text-xl font-semibold text-white mt-1">—</p>
+            </div>
+            <div class="rounded-2xl px-4 py-3" style="background: rgba(15,32,21,0.28);">
+              <p class="text-xs uppercase tracking-[0.18em] text-white/65">{planner.blueHourLabel}</p>
+              <p id="blue-hour-window" class="text-xl font-semibold text-white mt-1">—</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+
     <!-- Strong contrasting CTAs -->
     <div class="flex flex-col sm:flex-row gap-3 justify-center">
       <a href={h.navCta.href} class="btn-cta btn-cta-primary">
@@ -59,6 +84,8 @@ const live = h.liveInfo ?? {};
     (function () {
       var weatherEl = document.getElementById('current-weather');
       var sunsetEl = document.getElementById('sunset-time');
+      var arriveEl = document.getElementById('sunset-arrive-time');
+      var blueHourEl = document.getElementById('blue-hour-window');
       if (!weatherEl || !sunsetEl) return;
 
       var url =
@@ -144,6 +171,24 @@ const live = h.liveInfo ?? {};
         return isoLike.slice(tIndex + 1, tIndex + 6) || '—';
       }
 
+      function formatClock(date) {
+        if (!(date instanceof Date) || isNaN(date.getTime())) return '—';
+        var hours = String(date.getHours()).padStart(2, '0');
+        var minutes = String(date.getMinutes()).padStart(2, '0');
+        return hours + ':' + minutes;
+      }
+
+      function parseIsoLike(isoLike) {
+        if (!isoLike || typeof isoLike !== 'string') return null;
+        var parsed = new Date(isoLike);
+        return isNaN(parsed.getTime()) ? null : parsed;
+      }
+
+      function setPlannerFallback() {
+        if (arriveEl) arriveEl.textContent = '—';
+        if (blueHourEl) blueHourEl.textContent = '—';
+      }
+
       function setLoading() {
         var lang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
         var msg = '数据获取中...';
@@ -157,6 +202,7 @@ const live = h.liveInfo ?? {};
       function setFallback() {
         weatherEl.textContent = '—';
         sunsetEl.textContent = '—';
+        setPlannerFallback();
       }
 
       setLoading();
@@ -178,6 +224,19 @@ const live = h.liveInfo ?? {};
             weatherEl.textContent = '—';
           }
           sunsetEl.textContent = formatSunsetHHMM(sunset);
+          var sunsetDate = parseIsoLike(sunset);
+          if (sunsetDate) {
+            if (arriveEl) {
+              var arriveDate = new Date(sunsetDate.getTime() - 60 * 60 * 1000);
+              arriveEl.textContent = formatClock(arriveDate);
+            }
+            if (blueHourEl) {
+              var blueHourEnd = new Date(sunsetDate.getTime() + 30 * 60 * 1000);
+              blueHourEl.textContent = formatClock(sunsetDate) + '–' + formatClock(blueHourEnd);
+            }
+          } else {
+            setPlannerFallback();
+          }
         })
         .catch(function () {
           setFallback();

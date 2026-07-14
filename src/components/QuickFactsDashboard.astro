@@ -14,13 +14,14 @@ const items = q.items ?? [];
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {items.map((it) => (
-        <div class="rounded-2xl p-6 border h-full" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+        <div class="rounded-3xl p-6 border h-full overflow-hidden relative" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+          <div class="absolute inset-x-0 top-0 h-1" style="background: color-mix(in srgb, var(--accent) 50%, transparent);"></div>
           <div class="flex items-start justify-between gap-4 mb-4">
             <div>
               <p class="text-xs uppercase tracking-[0.18em] mb-2" style="color: var(--text-muted);">{it.label}</p>
-              <p class="text-xl font-semibold leading-snug" style="color: var(--text-primary);">{it.value}</p>
+              <p class="text-3xl sm:text-4xl font-semibold leading-none tracking-tight" style="color: var(--text-primary);">{it.value}</p>
             </div>
-            {it.icon && <span class="text-2xl" aria-hidden="true">{it.icon}</span>}
+            {it.icon && <span class="text-3xl opacity-80" aria-hidden="true">{it.icon}</span>}
           </div>
           {it.note && <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{it.note}</p>}
         </div>
