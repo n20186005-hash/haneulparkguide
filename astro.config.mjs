@@ -6,7 +6,7 @@ export default defineConfig({
   site: 'https://haneulparkguide.com',
   output: 'static',
   i18n: {
-    defaultLocale: 'zh',
+    defaultLocale: 'ko',
     locales: ['zh', 'en', 'ja', 'ko'],
     routing: {
       prefixDefaultLocale: true,

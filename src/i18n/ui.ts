@@ -3,7 +3,7 @@ import en from './en.json';
 import ja from './ja.json';
 import ko from './ko.json';
 
-export const defaultLang = 'zh';
+export const defaultLang = 'ko';
 export const languagesList = ['zh', 'en', 'ja', 'ko'] as const;
 
 export const languages: Record<string, string> = {
@@ -42,7 +42,7 @@ export function buildAlternates(path = ''): Record<string, string> {
     en: mk('en'),
     ja: mk('ja'),
     ko: mk('ko'),
-    xDefault: mk('zh'),
+    xDefault: mk('ko'),
   };
 }
 
