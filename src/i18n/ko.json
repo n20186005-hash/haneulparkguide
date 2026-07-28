@@ -49,7 +49,7 @@
     "reviewCount": "11,918개 후기",
     "hours": "24시간 개방",
     "openMaps": "Google 지도에서 위치 보기",
-    "mapsUrl": "https://maps.app.goo.gl/rfFpcei2FfbY7CoDA",
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7",
     "tags": ["동해 해돋이 명소", "속초팔경 중 하나", "무료 · 24시간"],
     "routeCta": { "label": "경로 계획", "href": "#transport" },
     "historyCta": { "label": "역사·전설 보기", "href": "#history" },
@@ -284,7 +284,7 @@
       "영금정·속초 해수욕장·아바이마을·엑스포타워·청초호를 반나절 해안 라인으로 연결."
     ],
     "mapsCta": "지도·경로 보기",
-    "mapsUrl": "https://maps.app.goo.gl/rfFpcei2FfbY7CoDA",
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7",
     "bestTime": {
       "title": "가장 좋은 도착 시각",
       "text": "영금정은 언제든 방문할 수 있지만, 새벽은 동해 수평선과 정자 실루엣, 파도의 움직임을 관찰하기 좋은 시간대입니다. 아침 기상이 불리하면 해안 산책과 주변 인문 동선으로 계획을 전환하는 것이 좋습니다."
@@ -351,7 +351,7 @@
     ],
     "viewAll": "Google 지도에서 위치 보기",
     "showMore": "사진 더 보기",
-    "mapsUrl": "https://maps.app.goo.gl/rfFpcei2FfbY7CoDA"
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7"
   },
   "reviews": {
     "title": "방문 후기",
@@ -359,7 +359,7 @@
     "featuredTitle": "방문자 명언",
     "featuredSubtitle": "영금정의 매력을 한 줄로.",
     "moreReviews": "Google 지도에서 보기",
-    "mapsUrl": "https://maps.app.goo.gl/rfFpcei2FfbY7CoDA",
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7",
     "featured": [
       { "text": "새벽 정자에서 해돋이, 수평선이 차츰 밝아지는 순간 압도적. 왔다 보람.", "source": "개별 여행자 · 서울" },
       { "text": "간조에 암석 걸으면 파도 소리와 목정자가 어우러져 속초 가장 편안한 아침.", "source": "사진가 · 춘천" },
@@ -376,7 +376,7 @@
     "title": "찾아오시는 길",
     "subtitle": "43 Yeonggeumjeong-ro, Dongmyeong-dong, Sokcho-si, Gangwon-do, 대한민국 (Plus Code: 6J62+RR)",
     "openMaps": "Google 지도에서 열기",
-    "mapsUrl": "https://maps.app.goo.gl/rfFpcei2FfbY7CoDA"
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7"
   },
   "footer": {
     "siteName": "영금정 해돋이정자",
@@ -391,7 +391,7 @@
     "cookies": "Cookie 설정",
     "officialResourcesTitle": "공식 및 참고 자료",
     "mapsLabel": "Google 지도 →",
-    "mapsUrl": "https://maps.app.goo.gl/rfFpcei2FfbY7CoDA",
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7",
     "officialLinksList": [
       { "name": "한국관광공사(비짓코리아) — 영금정", "url": "https://chinese.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=58010" },
       { "name": "속초시청 공식 관광사이트", "url": "https://www.sokcho.go.kr/ct/tour" },

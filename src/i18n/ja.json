@@ -49,7 +49,7 @@
     "reviewCount": "8,288件の口コミ",
     "hours": "06:00 – 22:00（季節により変動）",
     "openMaps": "Google マップで位置を見る",
-    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9",
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7",
     "tags": ["ソウルの夕日とスカイライン", "秋のススキの海", "無料・エコパーク"],
     "routeCta": {
       "label": "ルートを計画",
@@ -317,7 +317,7 @@
       "ハヌル公園と平和公園・蘭芝漢江公園・ワールドカップ競技場・弘大/望遠市場を半日エコ文化線に。"
     ],
     "mapsCta": "地図とルートを見る",
-    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9",
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7",
     "bestTime": {
       "title": "一番良い到着時間",
       "text": "ハヌル公園は終日訪問できますが、夕暮れは漢江とソウルのスカイラインを観察しやすい時間帯です。朝の天候が優れない場合は、平和公園散策や蘭芝漢江サイクリング、周辺の人文スポットに重点を移すのがよいでしょう。"
@@ -429,7 +429,7 @@
     ],
     "viewAll": "Google マップで位置を見る",
     "showMore": "写真をもっと見る",
-    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9"
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7"
   },
   "reviews": {
     "title": "口コミ",
@@ -437,7 +437,7 @@
     "featuredTitle": "訪問者の名言",
     "featuredSubtitle": "ハヌル公園の魅力を一言で表す短い言葉をいくつか。",
     "moreReviews": "Google マップで見る",
-    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9",
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7",
     "featured": [
       {
         "text": "夕暮れに頂上へ。ソウルのスカイラインが夕焼けに染まり、風はススキの香り。本当に癒やされました。",
@@ -483,7 +483,7 @@
     "title": "アクセス",
     "subtitle": "95 Haneulgongwon-ro, Mapo-gu, Seoul, 韓国（Plus Code：HV8P+X5）",
     "openMaps": "Google マップで開く",
-    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9"
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7"
   },
   "footer": {
     "siteName": "ハヌル公園（Haneul Park）",
@@ -498,7 +498,7 @@
     "cookies": "Cookie 設定",
     "officialResourcesTitle": "公式・参考リソース",
     "mapsLabel": "Google マップ →",
-    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9",
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7",
     "officialLinksList": [
       { "name": "ソウル観光公社（ビジットソウル）— ハヌル公園", "url": "https://www.visitseoul.net/" },
       { "name": "麻浦区庁 公式観光サイト", "url": "https://www.mapo.go.kr/" },

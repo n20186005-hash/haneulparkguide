@@ -49,7 +49,7 @@
     "reviewCount": "8,288 条评价",
     "hours": "06:00 – 22:00（依季节调整）",
     "openMaps": "查看 Google 地图位置",
-    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9",
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7",
     "tags": ["首尔落日与天际线", "秋季银芦苇花海", "免费 · 生态公园"],
     "routeCta": {
       "label": "规划前往路线",
@@ -324,7 +324,7 @@
       "天空公园最好与和平公园、兰芝汉江公园、世界杯体育场及弘大/望远市场串联，单点停留反而容易低估它的城市叙事价值。"
     ],
     "mapsCta": "查看地图与路线",
-    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9",
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7",
     "bestTime": {
       "title": "最佳到达时刻",
       "text": "天空公园全天可达，但真正决定体验上限的是黄昏的光线窗口。建议把山顶到达时间设在日落前 60 分钟左右；若天气不利于观景，再把行程重心转向和平公园、兰芝汉江公园骑行或世界杯体育场周边。"
@@ -436,7 +436,7 @@
     ],
     "viewAll": "在 Google 地图上查看位置",
     "showMore": "显示更多照片",
-    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9"
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7"
   },
   "reviews": {
     "title": "游客评价",
@@ -444,7 +444,7 @@
     "featuredTitle": "访客金句",
     "featuredSubtitle": "几句最能概括天空公园气质的短句。",
     "moreReviews": "在 Google 地图上查看",
-    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9",
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7",
     "featured": [
       {
         "text": "黄昏登顶那一刻，整座首尔的天际线被晚霞点亮，风里全是芦苇的味道，真的太治愈了。",
@@ -490,7 +490,7 @@
     "title": "如何到达",
     "subtitle": "95 Haneulgongwon-ro, Mapo-gu, Seoul, 韩国（Plus Code：HV8P+X5）",
     "openMaps": "在 Google 地图上打开",
-    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9"
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7"
   },
   "footer": {
     "siteName": "天空公园（Haneul Park）",
@@ -505,7 +505,7 @@
     "cookies": "Cookie 设置",
     "officialResourcesTitle": "官方与参考资源",
     "mapsLabel": "Google 地图 →",
-    "mapsUrl": "https://maps.app.goo.gl/7vM3HNVNixHPDDjz9",
+    "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7",
     "officialLinksList": [
       { "name": "首尔观光官网（Visit Seoul）— 天空公园", "url": "https://www.visitseoul.net/" },
       { "name": "麻浦区厅官方观光网", "url": "https://www.mapo.go.kr/" },
