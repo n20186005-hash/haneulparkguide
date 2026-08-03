@@ -1,0 +1,15 @@
+# Cloudflare Workers 配置（由 Cloudflare Pages 迁移而来）
+# 纯静态站点：使用 Static Assets 直接托管 dist/，无需 Worker 脚本入口。
+name = "haneulparkguide"
+compatibility_date = "2026-07-28"
+# 可选：若你的域名已在 Cloudflare 上，取消注释以绑定自定义域名
+# routes = [
+#   { pattern = "haneulparkguide.com", custom_domain = true },
+#   { pattern = "www.haneulparkguide.com", custom_domain = true },
+# ]
+
+[assets]
+# Astro 构建输出目录
+directory = "dist"
+# 绑定名称（仅在需要 Worker 脚本访问资源时使用，纯静态可忽略）
+binding = "ASSETS"
