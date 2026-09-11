@@ -1,0 +1,76 @@
+---
+import { getI18n } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const s = messages.guide?.stairs;
+const rows = s?.rows ?? [];
+const head = s?.compareHead ?? [];
+const cards = [s?.stairsCard, s?.tramCard].filter(Boolean);
+---
+
+{s && (
+  <section id="stairs" class="section-padding" style="background: var(--bg-secondary);">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-10">
+        {s.eyebrow && (
+          <p class="text-xs uppercase tracking-[0.22em] mb-3" style="color: var(--accent);">{s.eyebrow}</p>
+        )}
+        <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-3" style="color: var(--text-primary);">{s.title}</h2>
+        <p class="text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">{s.subtitle}</p>
+      </div>
+
+      {/* Two option cards: 291 stairs vs frog tram */}
+      <div class="grid md:grid-cols-2 gap-5 mb-10">
+        {cards.map((c, i) => (
+          <div class="rounded-3xl p-6 border h-full" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+            <div class="flex items-baseline justify-between gap-3 mb-4">
+              <h3 class="font-display text-xl font-semibold" style="color: var(--text-primary);">
+                <span aria-hidden="true">{i === 0 ? '🪜' : '🐸'}</span> {c.title}
+              </h3>
+              <span class="shrink-0 rounded-full px-3 py-1 text-sm font-semibold" style="background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--accent);">{c.value}</span>
+            </div>
+            <ul class="space-y-3 text-sm leading-relaxed" style="color: var(--text-secondary);">
+              {(c.items ?? []).map((it) => (
+                <li class="flex gap-3"><span style="color: var(--accent);">•</span><span>{it}</span></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      {/* Comparison table */}
+      {rows.length > 0 && (
+        <div class="max-w-4xl mx-auto mb-8 overflow-x-auto">
+          <h3 class="font-display text-xl font-semibold mb-4 text-center" style="color: var(--text-primary);">{s.compareTitle}</h3>
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr>
+                {head.map((h, i) => (
+                  <th class="px-4 py-3 font-semibold" style={`color: var(--text-primary); border-bottom: 1px solid var(--border-color);${i === 0 ? '' : ' text-center;'}`}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r) => (
+                <tr>
+                  <th scope="row" class="px-4 py-3 font-medium align-top" style="color: var(--text-primary); border-bottom: 1px solid var(--border-color);">{r.label}</th>
+                  <td class="px-4 py-3 text-center align-top" style="color: var(--text-secondary); border-bottom: 1px solid var(--border-color);">{r.stairs}</td>
+                  <td class="px-4 py-3 text-center align-top" style="color: var(--text-secondary); border-bottom: 1px solid var(--border-color);">{r.tram}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+
+      {/* Verdict */}
+      <div class="max-w-4xl mx-auto rounded-3xl p-6 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+        <h3 class="font-display text-lg font-semibold mb-2" style="color: var(--accent);">{s.verdictTitle}</h3>
+        <p class="text-base leading-relaxed" style="color: var(--text-secondary);">{s.verdict}</p>
+      </div>
+
+      {s.disclaimer && (
+        <p class="max-w-4xl mx-auto mt-6 text-xs leading-relaxed" style="color: var(--text-muted);">{s.disclaimer}</p>
+      )}
+    </div>
+  </section>
+)}

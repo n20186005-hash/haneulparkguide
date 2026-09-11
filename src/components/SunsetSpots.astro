@@ -1,0 +1,54 @@
+---
+import { getI18n } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const s = messages.guide?.sunset;
+const spots = s?.spots ?? [];
+const timingItems = s?.timingItems ?? [];
+const photoItems = s?.photoItems ?? [];
+---
+
+{s && (
+  <section id="sunset" class="section-padding" style="background: var(--bg-primary);">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-10">
+        {s.eyebrow && (
+          <p class="text-xs uppercase tracking-[0.22em] mb-3" style="color: var(--accent);">{s.eyebrow}</p>
+        )}
+        <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-3" style="color: var(--text-primary);">{s.title}</h2>
+        <p class="text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">{s.subtitle}</p>
+      </div>
+
+      {/* Viewpoints */}
+      <div class="grid sm:grid-cols-2 gap-5 mb-10">
+        {spots.map((sp, i) => (
+          <div class="rounded-3xl p-6 border h-full" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+            <div class="flex items-start gap-3 mb-3">
+              <span class="shrink-0 w-8 h-8 rounded-xl flex items-center justify-center text-sm font-semibold" style="background: var(--accent); color: #fff;">{String(i + 1).padStart(2, '0')}</span>
+              <h3 class="font-semibold text-lg leading-snug" style="color: var(--text-primary);">{sp.name}</h3>
+            </div>
+            <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{sp.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+        <div class="rounded-3xl p-6 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+          <h3 class="font-display text-lg font-semibold mb-4 flex items-center gap-2" style="color: var(--accent);">🕰️ {s.timingTitle}</h3>
+          <ul class="space-y-3 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            {timingItems.map((it) => (
+              <li class="flex gap-3"><span style="color: var(--accent);">•</span><span>{it}</span></li>
+            ))}
+          </ul>
+        </div>
+        <div class="rounded-3xl p-6 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+          <h3 class="font-display text-lg font-semibold mb-4 flex items-center gap-2" style="color: var(--accent);">📷 {s.photoTitle}</h3>
+          <ul class="space-y-3 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            {photoItems.map((it) => (
+              <li class="flex gap-3"><span style="color: var(--accent);">•</span><span>{it}</span></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+)}

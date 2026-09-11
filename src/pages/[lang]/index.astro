@@ -3,12 +3,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SectionNav from '../../components/SectionNav.astro';
 import Hero from '../../components/Hero.astro';
+import EntityIntro from '../../components/EntityIntro.astro';
 import QuickFactsDashboard from '../../components/QuickFactsDashboard.astro';
+import Weather from '../../components/Weather.astro';
 import ComplianceGuide from '../../components/ComplianceGuide.astro';
 import HigashiyamaRoute from '../../components/HigashiyamaRoute.astro';
 import Intro from '../../components/Intro.astro';
 import Transport from '../../components/Transport.astro';
+import StairsAndTram from '../../components/StairsAndTram.astro';
+import SunsetSpots from '../../components/SunsetSpots.astro';
+import NearbyDayTrip from '../../components/NearbyDayTrip.astro';
 import Lodging from '../../components/Lodging.astro';
+import PracticalInfo from '../../components/PracticalInfo.astro';
+import Story from '../../components/Story.astro';
 import HumanitiesDossier from '../../components/HumanitiesDossier.astro';
 import OutdoorMuseum from '../../components/OutdoorMuseum.astro';
 import Gallery from '../../components/Gallery.astro';
@@ -18,6 +25,7 @@ import Reviews from '../../components/Reviews.astro';
 import MapEmbed from '../../components/MapEmbed.astro';
 import DeepDive from '../../components/DeepDive.astro';
 import FAQ from '../../components/FAQ.astro';
+import SourcesSection from '../../components/SourcesSection.astro';
 import { getI18n, languagesList } from '../../i18n/ui';
 
 export function getStaticPaths() {
@@ -48,17 +56,25 @@ const faqLd = (() => {
   <Breadcrumbs />
   <SectionNav />
   <Hero />
+  <EntityIntro />
   <QuickFactsDashboard />
+  <Weather />
   <Intro />
   <HumanitiesDossier />
+  <Story />
   <DeepDive />
   <Transport />
+  <StairsAndTram />
   <HigashiyamaRoute />
+  <SunsetSpots />
+  <NearbyDayTrip />
   <HiddenRules />
   <ComplianceGuide />
+  <PracticalInfo />
   <Lodging />
   <MapEmbed />
   <FAQ />
+  <SourcesSection />
   <OutdoorMuseum />
   <Gallery />
   <FeaturedQuotes />

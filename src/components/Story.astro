@@ -1,0 +1,187 @@
+---
+import { getI18n } from '../i18n/ui';
+
+const { messages } = getI18n(Astro.url);
+const s = messages.story;
+const timeline = s.timeline ?? [];
+const legends = s.legends ?? [];
+const nature = s.nature ?? [];
+const seasons = s.seasons ?? [];
+---
+
+<section id="story" class="section-padding" style="background: var(--bg-secondary);">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-12">
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-3" style="color: var(--text-primary);">{s.title}</h2>
+      <p class="text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">{s.subtitle}</p>
+    </div>
+
+    <!-- ① 历史沿革时间线 -->
+    {timeline.length > 0 && (
+      <div class="mb-14">
+        <h3 class="story-heading">{s.timelineTitle}</h3>
+        <ol class="story-timeline">
+          {timeline.map((item) => (
+            <li class="story-timeline-item">
+              <span class="story-timeline-year">{item.year}</span>
+              <div class="story-timeline-body">
+                <p class="story-timeline-title">{item.title}</p>
+                <p class="story-timeline-text">{item.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    )}
+
+    <!-- ② 故事与传说 -->
+    {legends.length > 0 && (
+      <div class="mb-14">
+        <h3 class="story-heading">{s.legendTitle}</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+          {legends.map((legend, index) => (
+            <article
+              class="rounded-2xl p-6 border h-full"
+              style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);"
+            >
+              <span class="story-legend-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+              <h4 class="text-base font-semibold mb-2" style="color: var(--text-primary);">{legend.title}</h4>
+              <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{legend.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- ③ 生态与生物多样性 -->
+    {nature.length > 0 && (
+      <div class="mb-14">
+        <h3 class="story-heading">{s.natureTitle}</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {nature.map((item) => (
+            <div
+              class="rounded-2xl p-5 border h-full"
+              style="background: var(--bg-tertiary); border-color: var(--border-color);"
+            >
+              <span class="text-2xl block mb-2" aria-hidden="true">{item.icon}</span>
+              <p class="text-base font-semibold mb-2" style="color: var(--text-primary);">{item.title}</p>
+              <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- ④ 四季观察 -->
+    {seasons.length > 0 && (
+      <div>
+        <h3 class="story-heading">{s.seasonTitle}</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {seasons.map((season) => (
+            <div
+              class="rounded-2xl p-5 border h-full"
+              style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);"
+            >
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xl" aria-hidden="true">{season.icon}</span>
+                <p class="text-base font-semibold" style="color: var(--text-primary);">{season.name}</p>
+              </div>
+              <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{season.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .story-heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    padding-left: 0.75rem;
+    border-left: 3px solid var(--accent);
+  }
+
+  /* ── 时间线 ─────────────────────────────────────────── */
+  .story-timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    padding-left: 1.25rem;
+  }
+  .story-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.3rem;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 2px;
+    background: var(--border-color);
+  }
+  .story-timeline-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding-bottom: 1.5rem;
+  }
+  .story-timeline-item:last-child {
+    padding-bottom: 0;
+  }
+  .story-timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.05rem;
+    top: 0.45rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 999px;
+    background: var(--accent);
+  }
+  .story-timeline-year {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+  }
+  .story-timeline-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+  }
+  .story-timeline-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+  @media (min-width: 768px) {
+    .story-timeline-item {
+      flex-direction: row;
+      gap: 1.25rem;
+    }
+    .story-timeline-year {
+      flex: none;
+      width: 5.5rem;
+      padding-top: 0.1rem;
+    }
+    .story-timeline-body {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  .story-legend-index {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.6rem;
+    color: var(--accent);
+    opacity: 0.45;
+  }
+</style>

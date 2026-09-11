@@ -41,6 +41,11 @@
   --tag-bg: var(--color-sand-200);
   --tag-text: var(--color-nature-700);
   --map-border: var(--color-sand-300);
+  /* 天气建议：风险提醒（红）与常规提示（中性） */
+  --alert-bg: #fdf0ec;
+  --alert-border: #d9534f;
+  --alert-text: #8a2f2b;
+  --advice-bg: var(--color-sand-100);
 }
 
 [data-theme="dark"] {
@@ -59,6 +64,10 @@
   --tag-bg: #1e3a28;
   --tag-text: #a0c4a8;
   --map-border: #1e3a28;
+  --alert-bg: #3a1d19;
+  --alert-border: #e0716c;
+  --alert-text: #f6cfcb;
+  --advice-bg: #162d22;
 }
 
 * {

@@ -1,7 +1,17 @@
-# Cloudflare Workers 配置（由 Cloudflare Pages 迁移而来）
-# 纯静态站点：使用 Static Assets 直接托管 dist/，无需 Worker 脚本入口。
+# Cloudflare Workers 配置
+# ------------------------------------------------------------------
+# 站点主体（/ko /zh /en /ja 各页面）仍是构建期预渲染的静态资源，
+# 由 Static Assets 直接托管，访问速度不受影响；
+# 仅 /api/weather 这类天气端点在请求时由 Worker 于边缘执行。
+# 参考：@astrojs/cloudflare 的 Workers 部署方式
 name = "haneulparkguide"
 compatibility_date = "2026-07-28"
+# Astro 的 Cloudflare 适配器要求开启 Node 兼容标志
+compatibility_flags = ["nodejs_compat"]
+
+# Worker 入口（由 astro build 生成）
+main = "dist/_worker.js/index.js"
+
 # 可选：若你的域名已在 Cloudflare 上，取消注释以绑定自定义域名
 # routes = [
 #   { pattern = "haneulparkguide.com", custom_domain = true },
@@ -11,5 +21,7 @@ compatibility_date = "2026-07-28"
 [assets]
 # Astro 构建输出目录
 directory = "dist"
-# 绑定名称（仅在需要 Worker 脚本访问资源时使用，纯静态可忽略）
+# 绑定名称（Worker 需访问静态资源时使用）
 binding = "ASSETS"
+# 明确让 /api/* 先经过 Worker，避免被当作静态资源处理而返回 404
+run_worker_first = ["/api/*"]

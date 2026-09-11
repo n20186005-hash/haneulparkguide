@@ -4,7 +4,8 @@ import Header from '../components/Header.astro';
 import NoticeBanner from '../components/NoticeBanner.astro';
 import Footer from '../components/Footer.astro';
 import { getLangFromUrl, buildAlternates, htmlLangAttr, getI18n } from '../i18n/ui';
-import { ogLocale, siteConfig } from '../config';
+import { ogLocale } from '../config';
+import attraction from '../config/attraction';
 
 interface Props {
   title: string;
@@ -19,35 +20,66 @@ const alts = buildAlternates(path);
 const canonical = alts[lang] ?? alts.ko;
 const { messages } = getI18n(Astro.url);
 
+const absImage = (src: string) => (src.startsWith('http') ? src : `${attraction.siteUrl}${src}`);
+const heroImageUrl = absImage(attraction.heroImage);
+const imageUrls = attraction.images.map(absImage);
+
+// 多语言实体名（用于 alternateName / og:image:alt）
+const localEntityName: Record<string, string> = {
+  zh: '天空公园',
+  en: 'Haneul Park',
+  ja: 'ハヌル公園',
+  ko: '하늘공원',
+};
+const localizedName = localEntityName[lang];
+
+// 更丰富的结构化数据：TouristAttraction + Park 双类型，绑定 @id / image / geo / NAP
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'TouristAttraction',
-  name: messages.meta.title,
-  description: messages.meta.description,
+  '@type': ['TouristAttraction', 'Park'],
+  '@id': `${attraction.siteUrl}/#attraction`,
+  name: attraction.fullName,
+  alternateName: [
+    attraction.localName,
+    `${attraction.city} ${attraction.fullName}`,
+    `${attraction.fullName} (${localizedName})`,
+    localizedName,
+  ],
+  description,
   url: canonical,
-  image: 'https://haneulparkguide.com/gallery/haneulparkguide-1.jpg',
+  image: imageUrls,
+  isAccessibleForFree: attraction.isAccessibleForFree,
+  publicAccess: true,
+  touristType: ['Sightseeing', 'Nature & Wildlife', 'Photography'],
+  availableLanguage: ['Korean', 'English', 'Japanese', 'Chinese'],
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '95 Haneulgongwon-ro, Mapo-gu',
-    addressLocality: 'Seoul',
-    addressRegion: 'Seoul',
-    postalCode: '03900',
-    addressCountry: 'KR',
+    streetAddress: attraction.streetAddress,
+    addressLocality: attraction.city,
+    addressRegion: attraction.region,
+    postalCode: attraction.postalCode,
+    addressCountry: attraction.countryCode,
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 37.5786,
-    longitude: 126.8870,
+    latitude: attraction.latitude,
+    longitude: attraction.longitude,
   },
+  telephone: attraction.telephoneE164,
+  hasMap: attraction.mapsShareUrl,
+  sameAs: [
+    attraction.mapsShareUrl,
+    attraction.govtTourismUrl,
+    attraction.officialTourismUrl,
+  ],
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '06:00',
-      closes: '22:00',
+      opens: attraction.openingHours.opens,
+      closes: attraction.openingHours.closes,
     },
   ],
-  isAccessibleForFree: true,
   offers: [
     {
       '@type': 'Offer',
@@ -59,24 +91,31 @@ const jsonLd = {
   ],
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: '4.5',
-    reviewCount: '8288',
+    ratingValue: String(attraction.ratingValue),
+    reviewCount: String(attraction.reviewCount),
+    bestRating: '5',
+    worstRating: '1',
   },
-  sameAs: ['https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7'],
+  containedInPlace: {
+    '@type': 'Park',
+    name: 'World Cup Park',
+    '@id': 'https://parks.seoul.go.kr/',
+  },
 };
-  const breadcrumbLd = (() => {
-    const bc = messages.breadcrumb;
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: bc.home, item: `${siteConfig.baseUrl}/${lang}` },
-        { '@type': 'ListItem', position: 2, name: bc.region, item: `${siteConfig.baseUrl}/${lang}#overview` },
-        { '@type': 'ListItem', position: 3, name: bc.city, item: `${siteConfig.baseUrl}/${lang}#transport` },
-        { '@type': 'ListItem', position: 4, name: bc.current, item: canonical },
-      ],
-    };
-  })();
+
+const breadcrumbLd = (() => {
+  const bc = messages.breadcrumb;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: bc.home, item: `${attraction.siteUrl}/${lang}` },
+      { '@type': 'ListItem', position: 2, name: bc.region, item: `${attraction.siteUrl}/${lang}#overview` },
+      { '@type': 'ListItem', position: 3, name: bc.city, item: `${attraction.siteUrl}/${lang}#transport` },
+      { '@type': 'ListItem', position: 4, name: bc.current, item: canonical },
+    ],
+  };
+})();
 ---
 
 <!doctype html>
@@ -86,6 +125,9 @@ const jsonLd = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <!-- Canonical / alternate -->
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang="zh" href={alts.zh} />
     <link rel="alternate" hreflang="en" href={alts.en} />
@@ -93,14 +135,40 @@ const jsonLd = {
     <link rel="alternate" hreflang="ko" href={alts.ko} />
     <link rel="alternate" hreflang="x-default" href={alts.xDefault} />
 
+    <!-- Open Graph -->
+    <meta property="og:site_name" content={messages.header.siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={ogLocale[lang] ?? lang} />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content={heroImageUrl} />
+    <meta property="og:image:alt" content={`${attraction.fullName} (${localizedName}) — ${attraction.city}, ${attraction.country}`} />
+    <meta property="og:image:type" content="image/jpeg" />
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={heroImageUrl} />
+
+    <!-- Geo meta（补充 Google 地图侧的地理信号） -->
+    <meta name="geo.region" content={`${attraction.countryCode}-${attraction.region}`} />
+    <meta name="geo.placename" content={attraction.city} />
+    <meta name="geo.position" content={`${attraction.latitude};${attraction.longitude}`} />
+    <meta name="ICBM" content={`${attraction.latitude}, ${attraction.longitude}`} />
+
+    <!-- PWA / icons -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <meta name="theme-color" content="#c76b2a" />
+    <meta name="msapplication-TileColor" content="#c76b2a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content={attraction.fullName} />
+
+    <!-- GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
@@ -109,9 +177,7 @@ const jsonLd = {
       gtag('config', 'G-HXM22WWPKP');
     </script>
 
-    <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXX" />
-    <script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
-
+    <!-- Structured data -->
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)}></script>
     <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbLd)}></script>
 
@@ -123,6 +189,15 @@ const jsonLd = {
             document.documentElement.setAttribute('data-theme', 'dark');
           }
         } catch (e) {}
+      })();
+    </script>
+
+    <!-- Service Worker registration -->
+    <script is:inline>
+      (function () {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js').catch(function () {});
+        }
       })();
     </script>
 

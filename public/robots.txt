@@ -1,0 +1,18 @@
+# Haneul Park Guide — robots.txt
+# 全站对搜索引擎开放（不被 robots 屏蔽），并声明 sitemap。
+
+User-agent: *
+Allow: /
+
+# 允许主流 AI / 搜索抓取器访问
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://haneulparkguide.com/sitemap.xml
+Host: https://haneulparkguide.com

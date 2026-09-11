@@ -1,0 +1,58 @@
+---
+import { getI18n, getLangFromUrl } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const lang = getLangFromUrl(Astro.url);
+const n = messages.nearbyDayTrip;
+const stops = n?.stops ?? [];
+const tips = n?.tips ?? [];
+---
+
+{n && (
+  <section id="nearby" class="section-padding" style="background: var(--bg-secondary);">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-10">
+        {n.eyebrow && (
+          <p class="text-xs uppercase tracking-[0.22em] mb-3" style="color: var(--accent);">{n.eyebrow}</p>
+        )}
+        <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-3" style="color: var(--text-primary);">{n.title}</h2>
+        <p class="text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">{n.subtitle}</p>
+      </div>
+
+      {/* One-day route steps */}
+      <div class="max-w-4xl mx-auto rounded-3xl p-6 md:p-8 border mb-10" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+        <ol class="space-y-6">
+          {stops.map((s, i) => (
+            <li class="flex gap-4 items-start">
+              <div class="shrink-0 w-10 h-10 rounded-2xl flex items-center justify-center text-sm font-semibold" style="background: var(--accent); color: #fff;">
+                {String(i + 1).padStart(2, '0')}
+              </div>
+              <div class="min-w-0">
+                <p class="font-semibold text-lg leading-snug" style="color: var(--text-primary);">{s.name}</p>
+                {s.meta && <p class="text-xs uppercase tracking-[0.18em] mt-1" style="color: var(--text-muted);">{s.meta}</p>}
+                {s.text && <p class="text-base leading-relaxed mt-2" style="color: var(--text-secondary);">{s.text}</p>}
+                {s.link && (
+                  <a href={`/${getLangFromUrl(Astro.url)}${s.link}`} class="inline-block mt-3 text-sm font-medium" style="color: var(--accent);">{s.linkLabel} →</a>
+                )}
+                {s.url && (
+                  <a href={s.url} target="_blank" rel="noopener noreferrer" class="inline-block mt-3 text-sm font-medium" style="color: var(--accent);">{s.linkLabel} ↗</a>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      {/* Tips */}
+      {tips.length > 0 && (
+        <div class="max-w-4xl mx-auto rounded-3xl p-6 border" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+          <h3 class="font-display text-lg font-semibold mb-4" style="color: var(--accent);">🧭 {n.tipsTitle}</h3>
+          <ul class="space-y-3 text-sm leading-relaxed" style="color: var(--text-secondary);">
+            {tips.map((t) => (
+              <li class="flex gap-3"><span style="color: var(--accent);">•</span><span>{t}</span></li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  </section>
+)}

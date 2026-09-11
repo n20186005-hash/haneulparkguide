@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Haneul Park (하늘공원) | Seoul's Ecological Park in Mapo-gu · Silver-grass Meadow & Sunset",
-    "description": "The complete guide to Haneul Park (하늘공원): an ecological oasis in Seoul's Mapo-gu, transformed from a former landfill within World Cup Park. Silver-grass meadows, Han River sunsets and the Seoul skyline — all in one place. Opening hours, how to get there, the accessible shuttle, visitor reviews and photo spots."
+    "title": "Haneul Park Seoul Guide (2026): Free Entry, Tram Tickets & Stairs",
+    "description": "Visiting Haneul Park in Seoul? Entrance is FREE! Get updated 2026 info on frog tram ticket prices, the 291-step stairway, sunset photo spots, opening hours and how to get there by subway."
   },
   "header": {
-    "siteName": "Haneul Park",
+    "siteName": "Haneul Park (하늘공원)",
     "home": "Home",
     "visit": "Visit",
     "transport": "Getting There",
@@ -35,18 +35,264 @@
   },
   "stickyNav": {
     "facts": "Quick Facts",
+    "weather": "Today's Weather",
+    "story": "History & Stories",
+    "practical": "Practical Info",
     "etiquette": "Visitor Etiquette",
     "route": "Half-Day Route",
     "transport": "Getting There",
     "lodging": "Stay",
     "visit": "Visitor Tips",
+    "stairs": "Stairs vs Tram",
+    "sunset": "Sunset Spots",
+    "nearby": "Nearby Day Trip",
     "faq": "FAQ"
+  },
+  "weather": {
+    "title": "Live Weather & 7-Day Forecast",
+    "subtitle": "The summit is open, windy and completely exposed — check current conditions and the outlook before you climb.",
+    "loading": "Loading the latest observation…",
+    "unavailable": "Weather is temporarily unavailable. Please try again in a moment.",
+    "today": "Today",
+    "updatedAt": "Observed {time}",
+    "forecastTitle": "Next 7 days",
+    "feelsLike": "Feels like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "rainChance": "Rain chance",
+    "uvIndex": "UV index",
+    "sunrise": "Sunrise",
+    "sunset": "Sunset",
+    "unitHumidity": "%",
+    "unitWind": "km/h",
+    "unitUv": "",
+    "windLevelLabel": "level {n}",
+    "conditions": {
+      "clear": "Clear",
+      "mainly-clear": "Mostly clear",
+      "partly-cloudy": "Partly cloudy",
+      "overcast": "Overcast",
+      "fog": "Fog",
+      "drizzle": "Drizzle",
+      "freezing-drizzle": "Freezing drizzle",
+      "rain": "Rain",
+      "freezing-rain": "Freezing rain",
+      "snow": "Snow",
+      "snow-grains": "Snow grains",
+      "rain-showers": "Rain showers",
+      "snow-showers": "Snow showers",
+      "thunderstorm": "Thunderstorm",
+      "severe-thunderstorm": "Severe thunderstorm",
+      "unknown": "Changeable"
+    },
+    "advice": {
+      "rain": "Rain is likely — take an umbrella and wear shoes with grip, the stairway gets slippery.",
+      "uv": "UV levels are high and the hill has almost no shade — bring a hat, sunscreen and water.",
+      "wind": "Strong wind on the summit — bring a windproof layer, it feels noticeably colder up there.",
+      "clear": "Clear skies — excellent conditions for the Han River sunset and the city skyline.",
+      "default": "Watch the sky before you climb; the view changes quickly with cloud and wind."
+    }
+  },
+  "weatherAdvice": {
+    "sections": {
+      "alert": "Risk alerts",
+      "outfit": "What to wear",
+      "activities": "How to plan your visit",
+      "items": "What to bring"
+    },
+    "codes": {
+      "alert.thunder": "Thunderstorms. Do not stand on the summit or in the open, and do not shelter under trees.",
+      "alert.heavyRain": "Heavy rain. The stairway and boardwalk turn slippery — change your route up and avoid low ground.",
+      "alert.wind": "Wind at level {level} — very strong. Stay clear of signage and railing edges, and keep low on the summit.",
+      "alert.ice": "Paths may be icy. Hold the handrail on steps and slopes and move slowly.",
+      "alert.snow": "Snow is falling. Shorten your stride on the stairway and hold the railing.",
+      "alert.heat": "Daytime highs reach {temp}°C. Avoid climbing at midday and drink water regularly.",
+      "alert.cold": "Lows of {temp}°C. Cover exposed skin and take frequent breaks indoors.",
+      "alert.fog": "Thick fog. Visibility is poor and the Han River and skyline will be hidden, so take care on the move.",
+
+      "outfit.storm": "Thunderstorms — wear a waterproof outer layer and shoes with grip.",
+      "outfit.rainHeavy": "Heavy rain — a waterproof jacket and grippy shoes are essential.",
+      "outfit.snow": "Snow — wear waterproof ankle-height boots and thick socks.",
+      "outfit.windy": "Wind at level {level}. Wear a windproof layer and avoid long skirts or loose hats that blow away.",
+      "outfit.rain": "Rain — wear waterproof shoes and bring an umbrella; wet steps are slippery.",
+      "outfit.cold": "Cold — a thick coat plus a scarf will keep you comfortable.",
+      "outfit.hot": "Hot day — light, breathable clothing, plus a spare dry top if you sweat through.",
+      "outfit.muggy": "Humid and warm, so you will sweat. Breathable quick-dry clothing is far more comfortable.",
+      "outfit.swing": "A big day-to-night temperature swing — add a light layer you can take on and off.",
+      "outfit.mild": "Ordinary outdoor clothing is fine; a light layer helps in the early morning and evening.",
+
+      "play.storm": "Thunderstorms — skip the summit and move to indoor sights instead.",
+      "play.heavyRain": "Heavy rain — outdoor sightseeing is not advisable; the steps and boardwalk are slippery, so switch to indoor plans.",
+      "play.rain": "Rain is likely. The sunset and long views may be clouded over, so keep your schedule flexible.",
+      "play.snow": "Snow — the steps may be icy, so watch your footing and go slowly.",
+      "play.windStrong": "Wind at level {level} makes the summit feel far colder. Do not linger up there.",
+      "play.uvVeryHigh": "UV index {uv} — very high. Avoid climbing at midday and rest in the shade often.",
+      "play.hot": "Daytime highs of {temp}°C — climb in the early morning or after sunset instead.",
+      "play.cold": "Cold, and the summit is colder still — keep your visit short.",
+      "play.fog": "Fog blurs the view. Save the Han River and the skyline for another day.",
+      "play.drizzle": "Light, patchy rain may grey out the view, but walking is still fine.",
+      "play.windy": "Wind at level {level}. The summit is windier than the city, so bring a jacket.",
+      "play.uvHigh": "UV index {uv} — high. There is almost no shade on the hill, so bring a hat and sunscreen.",
+      "play.clearSunset": "Clear skies — the best possible conditions for the sunset and the city lights.",
+      "play.cloudyPhoto": "Cloudy with soft light — excellent for photography.",
+      "play.clear": "Good weather — ideal for the summit view and an easy walk.",
+      "play.mild": "Nothing in the weather will hold you back. Stick to your plan.",
+
+      "item.raincoat": "Pack a light raincoat — a long umbrella is awkward in strong wind.",
+      "item.grip": "Shoes with grip — wet steps and boardwalk are slippery.",
+      "item.umbrella": "A folding umbrella — there is a chance of rain.",
+      "item.warm": "A scarf and gloves — the summit is much colder than the city.",
+      "item.layer": "One light layer — the day-to-night temperature swing is large.",
+      "item.sunscreen": "Sunscreen — there is almost no shade on the hill.",
+      "item.sunglasses": "Sunglasses — strong glare tires your eyes.",
+      "item.hat": "A hat — especially useful when the sun is strong.",
+      "item.water": "Plenty of water — there is no shop or vending machine at the summit.",
+      "item.mask": "A mask — useful when the fog is thick.",
+      "item.quickdry": "You will sweat, so bring quick-dry clothing or a spare top.",
+      "item.mild": "Your normal going-out kit is enough."
+    }
+  },
+  "practicalInfo": {
+    "title": "Visitor Facilities & Practical Information",
+    "subtitle": "What is available on the hill and in the surrounding area, described by category so you can plan without any commercial recommendation.",
+    "neutralNote": "As an independent non-profit guide we do not recommend or rank individual businesses. The categories below simply describe the types of facilities you will find around the park.",
+    "groups": [
+      {
+        "id": "restroom",
+        "icon": "🚻",
+        "title": "Restrooms",
+        "summary": "There are no restrooms at the summit. Public toilets are in the lower parks and along the Han River side.",
+        "points": [
+          "The nearest public restrooms are in Peace Park below the hill and around Nanji Stream.",
+          "Some facilities include baby-changing tables and accessible stalls.",
+          "If you plan to stay on the summit, use a restroom before you start the climb."
+        ]
+      },
+      {
+        "id": "parking",
+        "icon": "🅿️",
+        "title": "Parking",
+        "summary": "There is no large dedicated car park on the hill; park below and walk or ride the shuttle up.",
+        "points": [
+          "World Cup Park's main public car park, under and beside Peace Park, has the most spaces.",
+          "A smaller temporary lot sits at the foot of the hill, with limited capacity.",
+          "Weekends and the autumn silver-grass season fill up fast — public transport is usually easier."
+        ]
+      },
+      {
+        "id": "food",
+        "icon": "🍽️",
+        "title": "Food & Drink",
+        "summary": "There is no restaurant or shop on the summit. Eat in the lower park area or in the nearby districts.",
+        "points": [
+          "Kiosks, convenience stores and cafés around Peace Park and the Han River side cover light meals.",
+          "The surrounding neighbourhoods offer a wide range of restaurants, noodle shops and bakeries.",
+          "Open fires and barbecues are not permitted anywhere in the park."
+        ]
+      },
+      {
+        "id": "stay",
+        "icon": "🏨",
+        "title": "Where to Stay",
+        "summary": "The park itself has no accommodation; lodging is concentrated in nearby districts and the city centre.",
+        "points": [
+          "Around the park you will mostly find business hotels, guesthouses and hostels.",
+          "Riverside hotels along the Han River suit travellers who want a water view.",
+          "Rates rise sharply in the spring and autumn peak seasons — book ahead."
+        ]
+      },
+      {
+        "id": "supplies",
+        "icon": "🛒",
+        "title": "Shops & Supplies",
+        "summary": "No large stores inside the park; convenience stores and supermarkets are near the stations and residential blocks.",
+        "points": [
+          "Convenience stores near the subway station and residential areas sell water, snacks and rain gear.",
+          "Supermarkets and fresh-food markets in the surrounding districts are good for stocking up.",
+          "The summit is dry and windy — carry more water than you expect to need."
+        ]
+      },
+      {
+        "id": "fuel",
+        "icon": "⛽",
+        "title": "Fuel & EV Charging",
+        "summary": "No fuel or charging facilities inside the park; these are found along the surrounding city roads.",
+        "points": [
+          "Petrol stations line the main roads around the World Cup Park area.",
+          "Public car parks generally include electric-vehicle charging bays.",
+          "Check opening hours and payment methods before you rely on a particular site."
+        ]
+      },
+      {
+        "id": "accessibility",
+        "icon": "♿",
+        "title": "Accessibility",
+        "summary": "Wheelchairs and strollers can reach the summit platform via the upper service road.",
+        "points": [
+          "The park shuttle runs on fixed stops and removes the need to use the main stairway.",
+          "The boardwalk gradients are gentle and suit wheelchairs and strollers.",
+          "Ask on-site staff for assistance if you need a step-free route."
+        ]
+      },
+      {
+        "id": "safety",
+        "icon": "🛟",
+        "title": "Safety & Emergencies",
+        "summary": "The summit is open and exposed — watch the weather and the closing time.",
+        "points": [
+          "Lighting is limited after sunset; plan to descend before dusk.",
+          "Steps become slippery in rain or ice — wear shoes with good grip.",
+          "In an emergency in Korea call 119 for ambulance and rescue, or 112 for police."
+        ]
+      }
+    ]
+  },
+  "story": {
+    "title": "History, Stories & the Living Hill",
+    "subtitle": "Haneul Park is more than a viewpoint. Beneath the silver grass lies one of the most remarkable environmental turnarounds in Korea — a landfill that became a public meadow.",
+    "timelineTitle": "From landfill to landmark",
+    "timeline": [
+      { "year": "1978", "title": "The landfill opens", "text": "Nanjido, a sandbank in the Han River, begins receiving almost all of Seoul's household waste." },
+      { "year": "1978–1993", "title": "Fifteen years of waste", "text": "Roughly 92 million tonnes of refuse are stacked into two huge mounds, making it the largest landfill the country had ever seen." },
+      { "year": "1993", "title": "The landfill closes", "text": "Waste stops arriving. The site is sealed and left to stabilise under layers of soil." },
+      { "year": "1999–2002", "title": "Ecological restoration", "text": "Deep soil capping and planting stabilise the slopes. Pioneer grasses, silver grass among them, colonise the bare ground." },
+      { "year": "2002", "title": "World Cup Park opens", "text": "Ahead of the FIFA World Cup the site reopens as World Cup Park. Haneul Park is the high meadow on its north-western edge." },
+      { "year": "2010s–today", "title": "A Seoul icon", "text": "Autumn silver grass and sunsets over the Han River make the hill one of the city's best-loved seasonal destinations." }
+    ],
+    "legendTitle": "Stories carried by the hill",
+    "legends": [
+      { "title": "Why Nanjido?", "text": "The old name of the island is usually read as 蘭芝島, the island where orchids and fragrant grasses grew, though some explain it as 卵島, egg island, after its smooth oval outline. Either way the name records what the sandbank once was, long before it became a landfill." },
+      { "title": "Ninety metres above the memory", "text": "Locals still call the hill a garbage mountain. Standing on the summit with wind moving through the silver grass, it is almost impossible to believe the ground beneath your feet was once the city's refuse. The transformation is the story." },
+      { "title": "Why the sky?", "text": "Haneul simply means sky. The name was given to a hill that rises high enough to feel level with the clouds, and to a place meant to lift the city's gaze back up." }
+    ],
+    "natureTitle": "What lives here now",
+    "nature": [
+      { "icon": "🌾", "title": "Silver grass meadow", "text": "Silver grass established itself naturally on the capped landfill and now forms the signature autumn meadow — a textbook example of ecological succession on disturbed ground." },
+      { "icon": "🦆", "title": "A stopover for birds", "text": "Beside the Han River and Nanji Stream the park sits on a migration corridor; wetland birds and waterfowl rest here in spring and autumn." },
+      { "icon": "🦋", "title": "Insects and small wildlife", "text": "The open meadow supports pollinators and insects through the warm months, which in turn feed the birds passing through." },
+      { "icon": "🌳", "title": "Cooling the city", "text": "Greenery over a capped landfill stores carbon, holds the soil and eases the urban heat island — a practical lesson in circular land use." }
+    ],
+    "seasonTitle": "The hill through the year",
+    "seasons": [
+      { "icon": "🌸", "name": "Spring", "text": "Fresh growth on the slopes, blossom along the river and migrating birds passing through." },
+      { "icon": "🌿", "name": "Summer", "text": "Deep green meadow, long daylight hours and warm evenings over the city skyline." },
+      { "icon": "🌾", "name": "Autumn", "text": "Silver grass at its peak, the reason most travellers come, together with the year's best sunsets." },
+      { "icon": "❄️", "name": "Winter", "text": "A quiet, snow-dusted hill, clear air and wintering waterfowl on the river below." }
+    ]
+  },
+  "entityIntro": {
+    "title": "About Haneul Park (Seoul)",
+    "lead": "Welcome to <strong>Haneul Park (하늘공원)</strong>, the attraction behind <strong>haneulparkguide.com</strong>. Located in the heart of <strong>Mapo-gu, Seoul, South Korea</strong>, this destination serves as a primary hub for travelers visiting western Seoul and the Han River parks.",
+    "breadcrumbLabel": "Geographic hierarchy",
+    "nearbyLabel": "Nearby landmarks",
+    "nearbyText": "When visiting <strong>Haneul Park</strong>, travelers can easily explore surrounding green spaces and landmarks, including <strong>Peace Park (평화의공원)</strong> and <strong>Nanji Hangang Park (난지한강공원)</strong>.",
+    "officialCta": "For official updates and regional tourism information, visit the"
   },
   "hero": {
     "title": "Haneul Park (하늘공원)",
     "subtitle": "An ecological oasis in Seoul's Mapo-gu, inside World Cup Park — reborn from a former landfill. Free to enter, it is Seoul's top spot for silver-grass meadows, Han River sunsets and the city skyline. Climb the eco-hill and watch the afterglow spread across the skyline.",
-    "rating": "4.5 (8,288)",
-    "reviewCount": "8,288 reviews",
+    "rating": "4.5 (8,297)",
+    "reviewCount": "8,297 reviews",
     "hours": "06:00 – 22:00 (seasonal)",
     "openMaps": "View on Google Maps",
     "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7",
@@ -65,7 +311,7 @@
       { "icon": "🕕", "label": "Hours", "value": "06:00–22:00" }
     ],
     "navCta": { "label": "📍 Get directions", "href": "#transport" },
-    "photoCta": { "label": "📸 Best photo spots", "href": "#gallery" },
+    "photoCta": { "label": "📸 Best photo spots", "href": "#sunset" },
     "liveInfo": { "weather": "Current weather", "sunset": "Tonight's sunset" }
   },
   "quickFactsDashboard": {
@@ -486,11 +732,15 @@
     "mapsUrl": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7"
   },
   "footer": {
-    "siteName": "Haneul Park",
+    "siteName": "Haneul Park (하늘공원)",
     "rights": "© 2026 Haneul Park Guide — an independent non-profit attraction information project. All rights reserved.",
     "mission": {
       "title": "Our Mission",
       "text": "So that every traveler who visits Seoul does not miss this oasis reborn from a garbage mountain inside World Cup Park, we have gathered scattered official information into this guide — purely to give you the most authentic viewing and cultural experience."
+    },
+    "nap": {
+      "title": "Name, Address & Phone",
+      "phone": "Phone"
     },
     "legalLinksTitle": "Privacy & Terms",
     "privacy": "Privacy Policy",
@@ -503,9 +753,10 @@
       { "name": "Visit Seoul — Haneul Park", "url": "https://www.visitseoul.net/" },
       { "name": "Mapo-gu Office Tourism", "url": "https://www.mapo.go.kr/" },
       { "name": "Seoul Parks (World Cup Park / Haneul Park)", "url": "https://parks.seoul.go.kr/" },
-      { "name": "Korea Tourism Organization (VisitKorea)", "url": "https://chinese.visitkorea.or.kr/" },
+      { "name": "Korea Tourism Organization (VisitKorea)", "url": "https://english.visitkorea.or.kr/" },
       { "name": "Korea Accessible Tourism", "url": "https://access.visitkorea.or.kr/" }
     ],
+    "imageCredit": "All images displayed on this site are copyrighted by their original photographers and used here for illustrative purposes.",
     "disclaimer": "This website is an independent non-profit visitor information project. We are affiliated with no government agency or official organization."
   },
   "privacy": {
@@ -571,6 +822,112 @@
     "save": "Save preferences",
     "saved": "Preferences saved!"
   },
+  "guide": {
+    "stairs": {
+      "eyebrow": "Getting to the top",
+      "title": "Haneul Park Stairs vs. the Frog Tram (개구리차)",
+      "subtitle": "No private car can reach the summit. You either climb the zigzag stairway or ride the park's frog tram — here is the honest comparison to help you choose.",
+      "stairsCard": {
+        "title": "Zigzag Stairs",
+        "value": "291 steps",
+        "items": [
+          "291 ecological stairs zigzag from Peace Park up the ~90 m eco-hill.",
+          "On foot it takes about 15–20 minutes at a steady pace, or 25–30 minutes with photo stops.",
+          "Free, and open with the park (roughly 06:00–22:00, seasonal).",
+          "Steep with no ramp — not suitable for strollers or wheelchairs."
+        ]
+      },
+      "tramCard": {
+        "title": "Frog Tram (개구리차)",
+        "value": "≈ ₩3,000 round trip",
+        "items": [
+          "A rubber-tyred shuttle climbs the service road to the upper platform; from there it is a ~5 minute walk to the summit.",
+          "About ₩3,000 for an adult round trip (≈ ₩2,000 one way), with reduced fares for children — confirm current rates at the booth.",
+          "The accessible option for elders, small children, strollers and wheelchairs.",
+          "Runs on fixed stops; queues are longest during the autumn silver-grass festival and on weekend afternoons."
+        ]
+      },
+      "compareTitle": "At a Glance",
+      "compareHead": ["", "Zigzag Stairs", "Frog Tram"],
+      "rows": [
+        { "label": "Cost", "stairs": "Free", "tram": "≈ ₩3,000 round trip" },
+        { "label": "Time to summit", "stairs": "15–20 min", "tram": "~10 min (+5 min walk)" },
+        { "label": "Effort", "stairs": "Steep, 291 steps", "tram": "Minimal" },
+        { "label": "Stroller / wheelchair", "stairs": "Not possible", "tram": "Accessible" },
+        { "label": "Best for", "stairs": "Fit walkers, photographers", "tram": "Families, reduced mobility" }
+      ],
+      "verdictTitle": "Which should you choose?",
+      "verdict": "If you are reasonably fit and want the classic Haneul Park experience, take the stairs up and — especially after sunset — consider the tram for the descent to spare your knees. With elders, infants or a stroller, use the frog tram in both directions. On peak autumn weekends, walking up is often faster than waiting in the tram queue.",
+      "disclaimer": "Tram fares, routes and closing times are set by the park operator and can change; please confirm at the ticket booth or the official Seoul parks site before you go."
+    },
+    "sunset": {
+      "eyebrow": "Golden hour",
+      "title": "Best Sunset & Photo Spots in Haneul Park",
+      "subtitle": "Haneul Park faces due west over the Han River, so the whole western rim of the summit turns gold at dusk. These are the viewpoints and timings photographers rely on.",
+      "spots": [
+        { "name": "West Rim Observation Deck (한강 조망대)", "text": "The main sunset platform on the Han River side — an unobstructed frame of the river, Nanji Hangang Park and the skyline behind it. On weekends, arrive and claim a spot 40–60 minutes early." },
+        { "name": "Silver-grass Boardwalk", "text": "The boardwalks threading the eulalia meadow are the signature foreground: backlit silver-grass with the sunset behind. October–November is peak, when the meadow turns pink-muhly and gold." },
+        { "name": "North Slope toward Noeul Park", "text": "Looking north-west, the neighbouring Noeul (Sunset) Park ridge and the World Cup Stadium roof catch the last light — a quieter alternative to the main deck." },
+        { "name": "Summit Pavilion & Lawn", "text": "The open lawn near the pavilion is where you spread a mat, shoot silhouettes and wait for the blue hour — the ~30 minutes after sunset when the sky turns deep blue and city lights switch on." }
+      ],
+      "timingTitle": "Timing & season",
+      "timingItems": [
+        "Arrive at the summit about 60 minutes before sunset to walk the rim and pick a spot.",
+        "The best light runs from roughly 40 minutes before sunset through the blue hour (~30 minutes after).",
+        "Peak season is the Seoul Silver-grass Festival, mid-October to mid-November, when the meadow is densest and crowds are largest.",
+        "Summer sunsets fall around 19:30–20:00, winter around 17:00–17:30 — check the live sunset time at the top of this page.",
+        "Bring a light jacket: the exposed summit is a few degrees cooler and windier than the city below."
+      ],
+      "photoTitle": "Photo & etiquette tips",
+      "photoItems": [
+        "Shoot wide for the meadow-plus-city frame, then switch to a longer lens to compress the skyline at dusk.",
+        "Never step off the boardwalk or trample the silver-grass for a better angle — rangers do enforce it.",
+        "A small tripod is fine on the platform but keep paths clear; it helps for blue-hour cityscapes."
+      ]
+    }
+  },
+  "nearbyDayTrip": {
+    "eyebrow": "Mapo-gu one-day route",
+    "title": "Haneul Park & Nearby Attractions: A Mapo-gu Day Trip",
+    "subtitle": "Haneul Park sits in the middle of a cluster of western-Seoul highlights. Pair it with the Oil Tank Culture Park and Nanji Hangang Park for a full, low-effort day.",
+    "stops": [
+      {
+        "name": "Haneul Park (하늘공원)",
+        "meta": "Start · 2–3 hours",
+        "text": "Begin at the World Cup Stadium foot, climb the 291 stairs or take the frog tram, then walk the silver-grass meadow and the Han River overlook. Allow 2–3 hours at an easy pace.",
+        "link": "#stairs",
+        "linkLabel": "Stairs vs tram guide"
+      },
+      {
+        "name": "Oil Tank Culture Park (문화비축기지)",
+        "meta": "Next · 1–1.5 hours",
+        "text": "Five former oil storage tanks, a 15-minute walk from the World Cup Stadium, have been reborn as a free culture park with exhibitions, a rooftop viewpoint and a café inside a tank. It is the closest major sight to Haneul Park and pairs perfectly with the stadium area.",
+        "url": "https://parks.seoul.go.kr/",
+        "linkLabel": "Official info"
+      },
+      {
+        "name": "Nanji Hangang Park (난지한강공원)",
+        "meta": "Afternoon · 1.5–2 hours",
+        "text": "Walk or cycle west to the Han River for wetlands, migratory-bird viewpoints, riverside lawns and bike rentals. The riverside sunset here follows on naturally from the Haneul Park view and is a relaxed way to end the day.",
+        "url": "https://hangang.seoul.go.kr/",
+        "linkLabel": "Official info"
+      },
+      {
+        "name": "World Cup Stadium & Hongdae",
+        "meta": "Dinner · 1–2 hours",
+        "text": "Finish at the Seoul World Cup Stadium concourse, then ride one or two subway stops to Hongdae or Mangwon Market for street food and nightlife.",
+        "url": "https://www.visitseoul.net/",
+        "linkLabel": "Nearby dining"
+      }
+    ],
+    "tipsTitle": "Plan it well",
+    "tips": [
+      "Do the whole loop on foot in 4–6 hours, or rent a public bike at Nanji Hangang Park to shorten the riverside stretch.",
+      "Haneul Park and the Oil Tank Culture Park are both free; only the frog tram inside Haneul Park charges a fare.",
+      "Short on time? Prioritise Haneul Park + the Oil Tank Culture Park — they are a 15-minute walk apart.",
+      "Check the sunset time before you start so you are on the Haneul Park summit for golden hour."
+    ]
+  },
   "faq": {
     "title": "Frequently Asked Questions",
     "subtitle": "Practical info about Haneul Park's facilities, history and visit planning.",
@@ -621,8 +978,16 @@
         "title": "Planning & Tickets",
         "items": [
           {
-            "q": "Is there an admission ticket?",
-            "a": "Haneul Park is a public ecological park, free daily ~06:00–22:00 (seasonal), with no gate, no ticket and no reservation — visit anytime."
+            "q": "Is Haneul Park free to enter?",
+            "a": "Yes — entry is completely free. Haneul Park is a public ecological park inside World Cup Park with no gate, no admission fee and no reservation required. Only the internal frog tram (개구리차) charges a separate fare. Opening hours are roughly 06:00–22:00, varying by season."
+          },
+          {
+            "q": "How much are the Haneul Park tram (frog tram) tickets?",
+            "a": "The frog tram (개구리차) that climbs the service road to the upper platform costs about ₩3,000 for an adult round trip (≈ ₩2,000 one way), with reduced fares for children; fares are paid at the booth and are separate from entry, which is free. Rates, routes and operating hours are set by the park and can change, so confirm on site."
+          },
+          {
+            "q": "How many stairs are there in Haneul Park?",
+            "a": "There are 291 ecological stairs zigzagging from the foot (Peace Park) to the summit — about a 15–20 minute climb at a steady pace. They are steep with no ramp, so visitors with strollers, wheelchairs or limited mobility should use the frog tram up the service road instead."
           },
           {
             "q": "How long does a visit take?",
@@ -644,6 +1009,19 @@
           }
         ]
       }
+    ]
+  },
+  "sources": {
+    "title": "Sources & References",
+    "subtitle": "To ensure accuracy and authority, this guide is based on the following official and reputable sources. This is an independent, non-profit project with no affiliation to any government agency.",
+    "lastUpdated": "Last updated: September 2026",
+    "imageCredit": "All images displayed on this site are copyrighted by their original photographers and used here for illustrative purposes.",
+    "items": [
+      { "name": "Seoul Metropolitan Government Parks", "url": "https://parks.seoul.go.kr/", "description": "Official Seoul parks portal for World Cup Park and Haneul Park." },
+      { "name": "Visit Seoul", "url": "https://www.visitseoul.net/", "description": "Seoul Tourism Organization's official visitor guide." },
+      { "name": "Mapo-gu Office", "url": "https://www.mapo.go.kr/", "description": "Local district administration and tourism information." },
+      { "name": "Korea Tourism Organization (VisitKorea)", "url": "https://english.visitkorea.or.kr/", "description": "National tourism board with practical travel information." },
+      { "name": "Google Maps — Haneul Park", "url": "https://maps.app.goo.gl/yCzVRqGHL5rkgDFL7", "description": "Official Google Maps listing with reviews and directions." }
     ]
   },
   "recommendations": {

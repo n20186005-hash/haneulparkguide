@@ -1,0 +1,633 @@
+---
+import { getI18n } from '../i18n/ui';
+
+const { messages } = getI18n(Astro.url);
+const w = messages.weather;
+const wa = messages.weatherAdvice;
+
+const metrics = [
+  { id: 'feels', icon: '🌡️', label: w.feelsLike },
+  { id: 'humidity', icon: '💧', label: w.humidity },
+  { id: 'wind', icon: '🌬️', label: w.wind },
+  { id: 'rain', icon: '☔', label: w.rainChance },
+  { id: 'uv', icon: '🔆', label: w.uvIndex },
+  { id: 'sun', icon: '🌇', label: `${w.sunrise} / ${w.sunset}` },
+];
+
+/* 三组建议：图标与语言无关，标题来自词条 */
+const groups = [
+  { id: 'outfit', icon: '👕', title: wa.sections.outfit },
+  { id: 'activities', icon: '🗺️', title: wa.sections.activities },
+];
+---
+
+<section id="weather" class="section-padding" style="background: var(--bg-secondary);">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-3 text-center" style="color: var(--text-primary);">{w.title}</h2>
+    <p class="text-center text-base sm:text-lg mb-10" style="color: var(--text-secondary);">{w.subtitle}</p>
+
+    <div id="weather-root" class="weather-card" data-state="loading" data-alert="false">
+      <p id="w-status" class="text-center text-sm py-8" style="color: var(--text-secondary);">{w.loading}</p>
+
+      <div id="w-body" class="hidden">
+        <!-- ① 风险提醒：只有达到危险阈值才出现，置顶红色展示 -->
+        <div id="w-alerts" class="weather-alerts" hidden>
+          <p class="weather-alerts-title">
+            <span aria-hidden="true">⚠️</span>
+            {wa.sections.alert}
+          </p>
+          <ul id="w-alert-list" class="weather-alert-list"></ul>
+        </div>
+
+        <!-- ② 基础天气卡片 -->
+        <div class="weather-now">
+          <div class="weather-now-main">
+            <span id="w-icon" class="weather-now-icon" aria-hidden="true">—</span>
+            <div>
+              <p id="w-temp" class="weather-now-temp">—</p>
+              <p id="w-cond" class="weather-now-cond">—</p>
+            </div>
+          </div>
+          <p id="w-observed" class="weather-now-observed"></p>
+        </div>
+
+        <dl class="weather-metrics">
+          {metrics.map((metric) => (
+            <div class="weather-metric">
+              <dt>
+                <span aria-hidden="true">{metric.icon}</span>
+                {metric.label}
+              </dt>
+              <dd id={`w-${metric.id}`}>—</dd>
+            </div>
+          ))}
+        </dl>
+
+        <!-- ③ 智能建议：按天气条件动态渲染，不满足条件的不展示 -->
+        <div id="w-advice" class="advice-area" hidden>
+          <div class="advice-groups">
+            {groups.map((group) => (
+              <section class="advice-group" data-group={group.id}>
+                <h3 class="advice-title">
+                  <span aria-hidden="true">{group.icon}</span>
+                  {group.title}
+                </h3>
+                <ul id={`w-${group.id}`} class="advice-list"></ul>
+              </section>
+            ))}
+          </div>
+
+          <section class="advice-group advice-group-wide" data-group="items">
+            <h3 class="advice-title">
+              <span aria-hidden="true">🎒</span>
+              {wa.sections.items}
+            </h3>
+            <ul id="w-items" class="advice-chips"></ul>
+          </section>
+        </div>
+
+        <!-- ④ 未来多日预报 -->
+        <h3 class="weather-subtitle">{w.forecastTitle}</h3>
+        <ol id="w-daily" class="weather-days"></ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="application/json" id="weather-i18n" set:html={JSON.stringify({
+  today: w.today,
+  unavailable: w.unavailable,
+  updatedAt: w.updatedAt,
+  conditions: w.conditions,
+  units: { humidity: w.unitHumidity, wind: w.unitWind, uv: w.unitUv },
+  windLevelLabel: w.windLevelLabel,
+  codes: wa.codes,
+  groups: {
+    outfit: wa.sections.outfit,
+    activities: wa.sections.activities,
+    items: wa.sections.items,
+  },
+})} />
+
+<style>
+  .weather-card {
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    padding: 1.5rem;
+  }
+
+  /* ── 风险提醒（置顶） ───────────────────────────────── */
+  .weather-alerts {
+    margin-bottom: 1.25rem;
+    padding: 0.9rem 1rem;
+    border-radius: 14px;
+    border: 1px solid var(--alert-border);
+    border-left-width: 4px;
+    background: var(--alert-bg);
+  }
+  .weather-alerts-title {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--alert-text);
+    margin-bottom: 0.5rem;
+  }
+  .weather-alert-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .weather-alert-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45rem;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--alert-text);
+  }
+
+  /* 有风险提醒时弱化常规建议的视觉权重 */
+  .weather-card[data-alert='true'] .advice-area {
+    opacity: 0.82;
+  }
+
+  /* ── 基础天气卡片 ───────────────────────────────────── */
+  .weather-now {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .weather-now-main {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .weather-now-icon {
+    font-size: 3.25rem;
+    line-height: 1;
+  }
+  .weather-now-temp {
+    font-size: 2.75rem;
+    font-weight: 600;
+    line-height: 1.05;
+    color: var(--text-primary);
+  }
+  .weather-now-cond {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-top: 0.15rem;
+  }
+  .weather-now-observed {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+  .weather-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem 1rem;
+    margin: 1.25rem 0;
+  }
+  @media (min-width: 640px) {
+    .weather-metrics {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .weather-metric {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.55rem 0.75rem;
+    border-radius: 12px;
+    background: var(--bg-secondary);
+  }
+  .weather-metric dt {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+  .weather-metric dd {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  /* ── 智能建议区 ─────────────────────────────────────── */
+  .advice-area {
+    margin: 1.5rem 0 1.75rem;
+    transition: opacity 0.2s ease;
+  }
+  .advice-groups {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+  @media (min-width: 768px) {
+    .advice-groups {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .advice-group {
+    padding: 0.9rem 1rem;
+    border-radius: 14px;
+    background: var(--advice-bg);
+  }
+  .advice-group-wide {
+    margin-top: 0.75rem;
+  }
+  .advice-title {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--text-primary);
+    margin-bottom: 0.6rem;
+  }
+  .advice-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .advice-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+  }
+  .advice-icon {
+    flex: none;
+    line-height: 1.6;
+  }
+  .advice-chips {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .advice-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.87rem;
+    line-height: 1.4;
+    color: var(--text-primary);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+  }
+
+  /* ── 多日预报 ───────────────────────────────────────── */
+  .weather-subtitle {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+  }
+  .weather-days {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  @media (min-width: 640px) {
+    .weather-days {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  @media (min-width: 1024px) {
+    .weather-days {
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+  }
+  .weather-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.75rem 0.4rem;
+    border-radius: 14px;
+    background: var(--bg-secondary);
+    text-align: center;
+  }
+  .weather-day-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+  .weather-day-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  .weather-day-temps {
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+  .weather-day-temps span {
+    font-weight: 400;
+    color: var(--text-secondary);
+  }
+  .weather-day-rain {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var root = document.getElementById('weather-root');
+    var statusEl = document.getElementById('w-status');
+    var bodyEl = document.getElementById('w-body');
+    var dataEl = document.getElementById('weather-i18n');
+    if (!root || !statusEl || !bodyEl || !dataEl) return;
+
+    var L = JSON.parse(dataEl.textContent);
+    var lang = (document.documentElement.getAttribute('lang') || 'ko').toLowerCase();
+
+    var ICONS = {
+      clear: '☀️',
+      'mainly-clear': '🌤️',
+      'partly-cloudy': '⛅',
+      overcast: '☁️',
+      fog: '🌫️',
+      drizzle: '🌦️',
+      'freezing-drizzle': '🌧️',
+      rain: '🌧️',
+      'freezing-rain': '🌧️',
+      snow: '❄️',
+      'snow-grains': '🌨️',
+      'rain-showers': '🌦️',
+      'snow-showers': '🌨️',
+      thunderstorm: '⛈️',
+      'severe-thunderstorm': '⛈️',
+      unknown: '🌫️',
+    };
+    var NIGHT_ICONS = { clear: '🌙', 'mainly-clear': '🌙' };
+
+    /* 蒲福风级折算，用于把风速翻译成游客熟悉的「几级风」 */
+    var BEAUFORT_MAX_KMH = [5, 11, 19, 28, 38, 49, 61, 74, 88, 102, 117];
+
+    function beaufort(kmh) {
+      if (typeof kmh !== 'number' || !isFinite(kmh) || kmh < 1) return 0;
+      for (var i = 0; i < BEAUFORT_MAX_KMH.length; i += 1) {
+        if (kmh <= BEAUFORT_MAX_KMH[i]) return i + 1;
+      }
+      return 12;
+    }
+
+    function iconFor(condition, isDay) {
+      if (isDay === false && NIGHT_ICONS[condition]) return NIGHT_ICONS[condition];
+      return ICONS[condition] || ICONS.unknown;
+    }
+
+    function labelFor(condition) {
+      var conditions = L.conditions || {};
+      return conditions[condition] || conditions.unknown || '';
+    }
+
+    function setText(id, value) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = value;
+    }
+
+    function formatClock(value) {
+      return typeof value === 'string' && value.length >= 5 ? value.slice(0, 5) : '—';
+    }
+
+    function dayName(dateStr, index) {
+      var date = new Date(dateStr + 'T12:00:00');
+      if (isNaN(date.getTime())) return dateStr;
+      if (index === 0) return L.today;
+      try {
+        return new Intl.DateTimeFormat(lang, { weekday: 'short' }).format(date);
+      } catch (error) {
+        return dateStr;
+      }
+    }
+
+    function formatObserved(iso) {
+      if (!iso) return '';
+      var date = new Date(iso);
+      if (isNaN(date.getTime())) return '';
+      var time =
+        String(date.getHours()).padStart(2, '0') + ':' + String(date.getMinutes()).padStart(2, '0');
+      return L.updatedAt.replace('{time}', time);
+    }
+
+    /* 把建议条目的码翻译成当前语言，并填充 {temp} / {level} 之类的变量 */
+    function resolveText(item) {
+      var template = (L.codes || {})[item.code];
+      if (!template) return '';
+      if (!item.vars) return template;
+      return template.replace(/\{(\w+)\}/g, function (match, key) {
+        return Object.prototype.hasOwnProperty.call(item.vars, key) ? String(item.vars[key]) : match;
+      });
+    }
+
+    function renderList(listEl, items, itemClass) {
+      if (!listEl) return 0;
+      listEl.textContent = '';
+      var rendered = 0;
+      (items || []).forEach(function (item) {
+        var text = resolveText(item);
+        if (!text) return;
+        var li = document.createElement('li');
+        li.className = itemClass;
+
+        var icon = document.createElement('span');
+        icon.className = 'advice-icon';
+        icon.setAttribute('aria-hidden', 'true');
+        icon.textContent = item.icon || '•';
+
+        var label = document.createElement('span');
+        label.textContent = text;
+
+        li.appendChild(icon);
+        li.appendChild(label);
+        listEl.appendChild(li);
+        rendered += 1;
+      });
+      return rendered;
+    }
+
+    /* 空的分组直接隐藏，避免出现只有标题没有内容的空壳 */
+    function toggleGroup(listEl, rendered) {
+      var group = listEl && listEl.closest ? listEl.closest('.advice-group') : null;
+      if (group) group.hidden = rendered === 0;
+    }
+
+    function renderAdvice(advice) {
+      advice = advice || {};
+      var alerts = advice.alerts || [];
+
+      var alertBox = document.getElementById('w-alerts');
+      var alertList = document.getElementById('w-alert-list');
+      var alertCount = renderList(alertList, alerts, 'weather-alert-item');
+      if (alertBox) alertBox.hidden = alertCount === 0;
+      root.setAttribute('data-alert', alertCount > 0 ? 'true' : 'false');
+
+      var outfitList = document.getElementById('w-outfit');
+      var activityList = document.getElementById('w-activities');
+      var itemList = document.getElementById('w-items');
+
+      toggleGroup(outfitList, renderList(outfitList, advice.outfit, 'advice-item'));
+      toggleGroup(activityList, renderList(activityList, advice.activities, 'advice-item'));
+      toggleGroup(itemList, renderList(itemList, advice.items, 'advice-chip'));
+
+      var area = document.getElementById('w-advice');
+      if (area) {
+        area.hidden =
+          (!outfitList || outfitList.children.length === 0) &&
+          (!activityList || activityList.children.length === 0) &&
+          (!itemList || itemList.children.length === 0);
+      }
+    }
+
+    function render(data) {
+      var current = data.current || {};
+      var daily = data.daily || [];
+      var today = daily[0] || null;
+
+      setText('w-icon', iconFor(current.condition, current.isDay));
+      setText('w-temp', Math.round(current.temperature) + '°C');
+      setText('w-cond', labelFor(current.condition));
+      setText('w-observed', formatObserved(data.observedAt));
+
+      setText(
+        'w-feels',
+        current.apparentTemperature === null ? '—' : Math.round(current.apparentTemperature) + '°C',
+      );
+      setText(
+        'w-humidity',
+        current.humidity === null ? '—' : Math.round(current.humidity) + (L.units.humidity || ''),
+      );
+
+      if (current.windSpeed === null) {
+        setText('w-wind', '—');
+      } else {
+        var level = beaufort(current.windSpeed);
+        var levelLabel = (L.windLevelLabel || '').replace('{n}', level);
+        setText(
+          'w-wind',
+          Math.round(current.windSpeed) + ' ' + (L.units.wind || '') + (levelLabel ? ' · ' + levelLabel : ''),
+        );
+      }
+
+      setText(
+        'w-rain',
+        current.precipitationProbability === null
+          ? '—'
+          : Math.round(current.precipitationProbability) + '%',
+      );
+      setText('w-uv', today && today.uvIndexMax !== null ? String(Math.round(today.uvIndexMax)) : '—');
+      setText('w-sun', formatClock(today && today.sunrise) + ' / ' + formatClock(today && today.sunset));
+
+      var list = document.getElementById('w-daily');
+      if (list) {
+        list.textContent = '';
+        daily.forEach(function (day, index) {
+          var item = document.createElement('li');
+          item.className = 'weather-day';
+
+          var name = document.createElement('span');
+          name.className = 'weather-day-name';
+          name.textContent = dayName(day.date, index);
+
+          var icon = document.createElement('span');
+          icon.className = 'weather-day-icon';
+          icon.setAttribute('aria-hidden', 'true');
+          icon.textContent = iconFor(day.condition, true);
+
+          var temps = document.createElement('span');
+          temps.className = 'weather-day-temps';
+          temps.textContent = Math.round(day.temperatureMax) + '° ';
+          var low = document.createElement('span');
+          low.textContent = Math.round(day.temperatureMin) + '°';
+          temps.appendChild(low);
+
+          var rain = document.createElement('span');
+          rain.className = 'weather-day-rain';
+          rain.textContent =
+            (day.precipitationProbability === null
+              ? 0
+              : Math.round(day.precipitationProbability)) + '%';
+
+          var srLabel = document.createElement('span');
+          srLabel.className = 'sr-only';
+          srLabel.textContent = labelFor(day.condition);
+
+          item.appendChild(name);
+          item.appendChild(icon);
+          item.appendChild(temps);
+          item.appendChild(rain);
+          item.appendChild(srLabel);
+          list.appendChild(item);
+        });
+      }
+
+      renderAdvice(data.advice);
+
+      statusEl.hidden = true;
+      bodyEl.classList.remove('hidden');
+      root.setAttribute('data-state', 'ready');
+    }
+
+    function fail() {
+      statusEl.textContent = L.unavailable;
+      root.setAttribute('data-state', 'error');
+    }
+
+    var controller = null;
+
+    function load() {
+      if (controller) controller.abort();
+      controller = new AbortController();
+      fetch('/api/weather', { signal: controller.signal, headers: { accept: 'application/json' } })
+        .then(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.json();
+        })
+        .then(function (data) {
+          if (!data || !data.current) throw new Error('empty payload');
+          render(data);
+        })
+        .catch(function (error) {
+          if (error && error.name === 'AbortError') return;
+          if (root.getAttribute('data-state') !== 'ready') fail();
+        });
+    }
+
+    load();
+
+    /* 页面回到前台时刷新一次，避免长时间停留后数据过期 */
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) load();
+    });
+  })();
+</script>

@@ -1,5 +1,6 @@
 ---
 import { getI18n } from '../i18n/ui';
+import attraction from '../config/attraction';
 const { lang, messages } = getI18n(Astro.url);
 const f = messages.footer;
 const links = f.officialLinksList;
@@ -7,16 +8,36 @@ const links = f.officialLinksList;
 
 <footer class="section-padding" style="background: var(--bg-tertiary); border-top: 1px solid var(--border-color);">
   <div class="max-w-6xl mx-auto px-4">
+    <!-- 使命 -->
     <div class="mission-block mb-10">
       <h3 class="mission-title">🎯 {f.mission.title}</h3>
       <p class="mission-text">{f.mission.text}</p>
     </div>
+
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- 品牌 + NAP -->
       <div>
         <h3 class="font-display text-xl font-semibold mb-3" style="color: var(--text-primary);" set:html={f.siteName}></h3>
-        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{f.rights}</p>
+        <p class="text-sm leading-relaxed mb-4" style="color: var(--text-secondary);">{f.rights}</p>
+
+        {f.nap && (
+          <div class="rounded-2xl p-4 border" style="background: var(--card-bg); border-color: var(--border-color);">
+            <h4 class="text-xs uppercase tracking-[0.18em] mb-2" style="color: var(--text-muted);">{f.nap.title}</h4>
+            <address class="not-italic text-sm leading-relaxed" style="color: var(--text-secondary);">
+              <p class="font-medium" style="color: var(--text-primary);">{attraction.fullName} ({attraction.localName})</p>
+              <p>{attraction.streetAddressFull}</p>
+              <p class="mt-1">{f.nap.phone}: <a href={`tel:${attraction.telephoneE164}`} class="underline underline-offset-2" style="color: var(--accent);">{attraction.telephone}</a></p>
+              <p class="mt-1">
+                <a href={attraction.mapsShareUrl} target="_blank" rel="noopener noreferrer" class="underline underline-offset-2" style="color: var(--accent);">
+                  Google Maps →
+                </a>
+              </p>
+            </address>
+          </div>
+        )}
       </div>
 
+      <!-- 官方资源 -->
       <div>
         <h4 class="font-semibold mb-3" style="color: var(--text-primary);">{f.officialResourcesTitle}</h4>
         <ul class="space-y-2 text-sm">
@@ -35,6 +56,7 @@ const links = f.officialLinksList;
         </ul>
       </div>
 
+      <!-- 法律链接 -->
       <div>
         <h4 class="font-semibold mb-3" style="color: var(--text-primary);">{f.legalLinksTitle}</h4>
         <ul class="space-y-2 text-sm">
@@ -45,8 +67,10 @@ const links = f.officialLinksList;
       </div>
     </div>
 
-    <div class="mt-10 pt-6 border-t text-xs" style="border-color: var(--border-color); color: var(--text-muted);">
-      <p class="leading-relaxed" set:html={f.disclaimer}></p>
+    <!-- 图片版权 + 免责声明 -->
+    <div class="mt-10 pt-6 border-t" style="border-color: var(--border-color); color: var(--text-muted);">
+      <p class="text-xs leading-relaxed mb-2" set:html={f.imageCredit}></p>
+      <p class="text-xs leading-relaxed" set:html={f.disclaimer}></p>
     </div>
   </div>
 </footer>

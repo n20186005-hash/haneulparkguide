@@ -1,13 +1,20 @@
 ---
 import { getI18n } from '../i18n/ui';
+import attraction from '../config/attraction';
+
 const { messages } = getI18n(Astro.url);
 const g = messages.gallery;
-const totalImages = 20;
-const images = Array.from({ length: totalImages }, (_, i) => {
-  const n = String(i + 1);
-  return `/gallery/haneulparkguide-${n}.jpg`;
+
+/**
+ * 照片命名规范：haneul-park-<index>
+ * 每张照片都有 .avif（主）与 .jpg（回退）两种格式，由 <picture> 自动协商。
+ */
+const images = Array.from({ length: attraction.galleryCount }, (_, i) => {
+  const stem = `${attraction.galleryBase}-${i + 1}`;
+  return { stem, jpg: `${stem}.jpg`, avif: `${stem}.avif` };
 });
 const photoAlts = g.photoAlts ?? images.map(() => g.photoAlt);
+const altFor = (index: number) => photoAlts[index] ?? g.photoAlt;
 ---
 
 <section id="gallery" class="section-padding" style="background: var(--bg-secondary);">
@@ -16,9 +23,23 @@ const photoAlts = g.photoAlts ?? images.map(() => g.photoAlt);
     <p class="text-center text-lg mb-10" style="color: var(--text-secondary);">{g.subtitle}</p>
 
     <div class="gallery-grid" id="gallery-grid">
-      {images.map((src, index) => (
-        <button type="button" class="gallery-item" data-index={index} aria-label={photoAlts[index] ?? g.photoAlt}>
-          <img src={src} alt={photoAlts[index] ?? g.photoAlt} loading="lazy" />
+      {images.map((image, index) => (
+        <button
+          type="button"
+          class="gallery-item"
+          data-index={index}
+          data-full={image.jpg}
+          aria-label={altFor(index)}
+        >
+          <picture>
+            <source srcset={image.avif} type="image/avif" />
+            <img
+              src={image.jpg}
+              alt={altFor(index)}
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         </button>
       ))}
     </div>
@@ -42,6 +63,14 @@ const photoAlts = g.photoAlts ?? images.map(() => g.photoAlt);
   <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">›</button>
 </div>
 
+<style>
+  .gallery-item picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
 <script is:inline>
   (function () {
     var grid = document.getElementById('gallery-grid');
@@ -55,8 +84,9 @@ const photoAlts = g.photoAlts ?? images.map(() => g.photoAlt);
     function show(i) {
       current = (i + items.length) % items.length;
       var el = items[current];
-      var src = el.querySelector('img').getAttribute('src');
-      var alt = el.querySelector('img').getAttribute('alt');
+      var thumb = el.querySelector('img');
+      var src = el.getAttribute('data-full') || thumb.getAttribute('src');
+      var alt = thumb.getAttribute('alt');
       img.setAttribute('src', src);
       img.setAttribute('alt', alt);
       cap.textContent = alt;

@@ -1,13 +1,21 @@
 ---
 import { getI18n } from '../i18n/ui';
+import attraction from '../config/attraction';
+
 const { messages } = getI18n(Astro.url);
 const reviews = messages.reviews;
 const featured = reviews.featured ?? [];
-const bg = '/gallery/haneulparkguide-1.jpg';
+
+// 装饰性背景：优先 AVIF，回退 JPEG（该区块覆盖 74% 深色蒙版，画质要求较低）。
+const bgAvif = `${attraction.galleryBase}-hero.avif`;
+const bgJpg = `${attraction.galleryBase}-hero.jpg`;
 ---
 
 {featured.length > 0 && (
-  <section class="section-padding relative overflow-hidden" style="background: linear-gradient(rgba(15,32,21,0.74), rgba(15,32,21,0.74)), url('{bg}'); background-size: cover; background-position: center; background-attachment: fixed;">
+  <section
+    class="section-padding relative overflow-hidden"
+    style={`background-image: linear-gradient(rgba(15,32,21,0.74), rgba(15,32,21,0.74)), image-set(url('${bgAvif}') type('image/avif'), url('${bgJpg}') type('image/jpeg')); background-size: cover; background-position: center; background-attachment: fixed;`}
+  >
     <div class="max-w-4xl mx-auto px-4 text-center">
       <p class="text-xs uppercase tracking-[0.24em] mb-8 text-white/70">{reviews.featuredTitle}</p>
 

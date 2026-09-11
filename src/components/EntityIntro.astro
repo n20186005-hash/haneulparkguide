@@ -1,0 +1,44 @@
+---
+import { getI18n } from '../i18n/ui';
+import attraction from '../config/attraction';
+
+const { messages } = getI18n(Astro.url);
+const e = messages.entityIntro;
+---
+
+<section id="entity" class="section-padding" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-5" style="color: var(--text-primary);">{e.title}</h2>
+
+    <p class="text-lg sm:text-xl leading-relaxed mb-8" style="color: var(--text-secondary);" set:html={e.lead}></p>
+
+    <div class="grid md:grid-cols-2 gap-6 text-left mb-8">
+      <div class="rounded-2xl p-6 border" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+        <h3 class="text-xs uppercase tracking-[0.18em] mb-3" style="color: var(--text-muted);">{e.breadcrumbLabel}</h3>
+        <nav aria-label="Geographic hierarchy">
+          <ol class="flex flex-wrap items-center gap-2 text-sm sm:text-base" style="color: var(--text-secondary);">
+            <li class="font-semibold" style="color: var(--text-primary);">{attraction.fullName}</li>
+            <li aria-hidden="true" style="color: var(--accent);">→</li>
+            <li>{attraction.district}</li>
+            <li aria-hidden="true" style="color: var(--accent);">→</li>
+            <li>{attraction.city}</li>
+            <li aria-hidden="true" style="color: var(--accent);">→</li>
+            <li>{attraction.country}</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="rounded-2xl p-6 border" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+        <h3 class="text-xs uppercase tracking-[0.18em] mb-3" style="color: var(--text-muted);">{e.nearbyLabel}</h3>
+        <p class="text-sm sm:text-base leading-relaxed" style="color: var(--text-secondary);" set:html={e.nearbyText}></p>
+      </div>
+    </div>
+
+    <p class="text-base" style="color: var(--text-secondary);">
+      {e.officialCta}
+      <a href={attraction.govtTourismUrl} target="_blank" rel="noopener noreferrer" class="font-medium underline underline-offset-4" style="color: var(--accent);">
+        {attraction.govtTourismName}
+      </a>.
+    </p>
+  </div>
+</section>

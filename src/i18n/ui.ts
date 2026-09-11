@@ -4,13 +4,14 @@ import ja from './ja.json';
 import ko from './ko.json';
 
 export const defaultLang = 'ko';
-export const languagesList = ['zh', 'en', 'ja', 'ko'] as const;
+/** 默认韩语，其余为可切换语言（顺序即语言切换器的展示顺序） */
+export const languagesList = ['ko', 'zh', 'en', 'ja'] as const;
 
 export const languages: Record<string, string> = {
+  ko: '한국어',
   zh: '中文',
   en: 'English',
   ja: '日本語',
-  ko: '한국어',
 };
 
 const ui: Record<string, any> = { zh, en, ja, ko };
